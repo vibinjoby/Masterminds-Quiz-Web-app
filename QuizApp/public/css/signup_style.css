@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    /* background: url(../images/back.jpg); */
+    opacity: 0.95;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.signupbox {
+    width: 370px;
+    height: 550px;
+    background: #000;
+    opacity: 0.9;
+    color: #fff;
+    top: 54%;
+    left: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 70px 30px; 
+}
+
+.avatar {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1 {
+    margin: 0;
+    margin-top: -10px;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.signupbox p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.signupbox input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.signupbox input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    text-emphasis: none;
+}
+
+.signupbox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 15px;
+}

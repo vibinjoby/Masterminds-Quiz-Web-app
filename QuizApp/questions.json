@@ -1,0 +1,82 @@
+{
+    "1": {
+        "question": "I ..... very well since I bought a new bed. I don't find it very comfortable",
+        "correct_answer": "haven`t slept",
+        "option_1": "was sleeping",
+        "option_2": "haven`t slept",
+        "option_3": "haven`t sleep",
+        "option_4": "didn`t sleep"
+    },
+    "2": {
+        "question": "My grandmother ..... for 62 years and she never even coughs. What a lucky woman!",
+        "correct_answer": "has smoked",
+        "option_1": "smokes",
+        "option_2": "smoked",
+        "option_3": "is smoking",
+        "option_4": "has smoked"
+    },
+    "3": {
+        "question": "I bought a new computer last week, but it ..... so I took it back to the shop.",
+        "correct_answer": "didn`t work",
+        "option_1": "worked not",
+        "option_2": "don`t work",
+        "option_3": "hasn`t worked",
+        "option_4": "didn`t work"
+    },
+    "4": {
+        "question": "    I tried to find you before school today. ......",
+        "correct_answer": "Where were you?",
+        "option_1": "Where were you?",
+        "option_2": "Where was you?",
+        "option_3": "Where have you been?",
+        "option_4": "Where did you be?"
+    },
+    "5": {
+        "question": "My math teacher wasn't happy yesterday. I ..... to bring my calculator to class.",
+        "correct_answer": "forgot",
+        "option_1": "was forgetting",
+        "option_2": "have forgotten",
+        "option_3": "forgot",
+        "option_4": "forget"
+    },
+    "6": {
+        "question": "Have you seen my pencil? It was here a minute ago and now ..... . .",
+        "correct_answer": "it`s gone",
+        "option_1": "it`s gone",
+        "option_2": "it went",
+        "option_3": "it was going",
+        "option_4": "it have gone"
+    },
+    "7": {
+        "question": "I ..... to the cinema since I came to Germany.",
+        "correct_answer": "haven`t gone",
+        "option_1": "went not",
+        "option_2": "haven`t gone",
+        "option_3": "hasn`t gone",
+        "option_4": "didn`t go"
+    },
+    "8": {
+        "question": "I like your watch. How long ..... it?",
+        "correct_answer": "have you had",
+        "option_1": "you have",
+        "option_2": "have you had",
+        "option_3": "did you have",
+        "option_4": "are you having"
+    },
+    "9": {
+        "question": "Have you ever ridden a horse? - No, but I ..... a camel when I visited Egypt last year.",
+        "correct_answer": "has had",
+        "option_1": "was having",
+        "option_2": "has had",
+        "option_3": "has",
+        "option_4": "had"
+    },
+    "10": {
+        "question": "I went to the school dance last Friday, but I ..... it very much",
+        "correct_answer": "didn`t enjoy",
+        "option_1": "haven`t enjoyed",
+        "option_2": "don`t enjoy",
+        "option_3": "didn`t enjoyed",
+        "option_4": "didn`t enjoy"
+    }
+}
