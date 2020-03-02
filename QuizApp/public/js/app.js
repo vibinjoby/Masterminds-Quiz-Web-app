@@ -1,6 +1,7 @@
 //Fetch all the questions from the file on load
 var questionNumber = 1;
 var questionObj = null;
+
 function loadQuestions() {
     console.log(questionNumber);
     var xhr = new XMLHttpRequest();
@@ -18,6 +19,7 @@ function loadQuestions() {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send("");
 }
+
 function onNextClick() {
     if(questionNumber < 10) {
         questionNumber += 1;
@@ -26,6 +28,7 @@ function onNextClick() {
     }
     updateQuestions();
 }
+
 function onQuestionChange() {
     //remove the answer selected
     for(i=1;i<=4;i++) {
@@ -45,6 +48,7 @@ function onQuestionChange() {
         }
     }
 }
+
 function updateQuestions() {
     var questions = questionObj[questionNumber];
     document.getElementById('qn_id').innerHTML = questions.question;
@@ -52,6 +56,7 @@ function updateQuestions() {
     document.getElementById('option2').innerHTML = questions.option_2;
     document.getElementById('option3').innerHTML = questions.option_3;
     document.getElementById('option4').innerHTML = questions.option_4;
+    document.getElementById('current_question').innerHTML = questionNumber+"/10";
     onQuestionChange(); 
 }
 
@@ -63,6 +68,7 @@ function onPreviousClick() {
     }
     updateQuestions();
 }
+
 function onAnswerSelected(li_id) {
     for(i=1;i<=4;i++) {
         if(li_id.id == "option"+i+"_li") {
@@ -79,6 +85,8 @@ function onAnswerSelected(li_id) {
 function onQuestionSelected (selectedButton) {
     for(i=1;i<=10;i++) {
         if(selectedButton.id == "qn_"+i) {
+            questionNumber = i;
+            updateQuestions();
             document.getElementById("qn_"+i).style.backgroundColor = "transparent";
             document.getElementById("qn_"+i).style.backgroundColor = "#23629F";
         } else {
