@@ -10,6 +10,11 @@ html, body { height: 100%; width: 100%; margin: 0;padding:0;min-height: 100%; po
 #profile_selection {
   margin-top: 83px;
 }
+#flagged_qn {
+  position: absolute;
+  right: 24px;
+  top: 8px;
+}
 .selection_menu {
   border-left: thick solid white;
   width:2px;

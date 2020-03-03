@@ -26,6 +26,7 @@
     <section class="content">
       <section class="columns">
         <section class="main">
+          <img id="flagged_qn" src="assets/flag_before_click.png" alt="app_logo" height="25" width="25" onclick="changeImage()"/>
           <section class="question">
             <p id="qn_id">HTML Stands for?</p>
           </section>
@@ -99,7 +100,7 @@
       <button class="progress_btns" id="next_btn" onclick="onNextClick()">Next</button>
       <progress value="10" max="100" data-label="50% Complete"></progress>
     </section>
-    <label id="time_counter" value="time left">Time Left: 12:15 mins</label>
+    <label id="time_counter" value="time left">Time Left: <span id="time">05:00</span> mins</label>
   </footer>
 </body>
 
