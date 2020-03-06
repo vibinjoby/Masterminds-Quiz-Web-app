@@ -12,8 +12,8 @@ html, body { height: 100%; width: 100%; margin: 0;padding:0;min-height: 100%; po
 }
 #flagged_qn {
   position: absolute;
-  right: 24px;
-  top: 8px;
+  left: 24px;
+  top: 28px;
 }
 .selection_menu {
   border-left: thick solid white;
@@ -64,7 +64,7 @@ html, body { height: 100%; width: 100%; margin: 0;padding:0;min-height: 100%; po
   color:#fff;
 
 }
-#topBar-first {
+#topBar-second {
   height: 43px;
   background: #23629F;
   color: #c6c4c4;
@@ -317,8 +317,8 @@ label #cancel{
   color: #000;
 }
 
-.main .options ul .answer-active {
-  border: 3px solid #23629F;
+.answer-active {
+  border: 3px solid green;
 }
 .answers {
   margin-top: 19px;
@@ -353,8 +353,8 @@ progress {
   height: 18px;
   text-align:center;
   border-radius: 9px;
-  margin-top: 20px;
-  margin-left: 404px;
+  margin-top: 39px;
+  margin-left: 228px;
 }
 
 progress:before {
@@ -365,7 +365,7 @@ progress:before {
 progress::-webkit-progress-bar {
   background-color: #c9c9c9;
 }
-#next_btn {
+#bottompane .moving_buttons #next_btn {
   position: absolute;
   top: 5px;
   bottom: 41px;
@@ -385,6 +385,13 @@ progress::-webkit-progress-bar {
   top: 30px;
   font-size: x-large;
 }
+#time_counter_real_quiz {
+  color: white;
+  position: absolute;
+  left: 129px;
+  top: 64px;
+  font-size: x-large;
+}
 
 .checkmark {
   display:inline-block;
@@ -396,8 +403,8 @@ progress::-webkit-progress-bar {
   margin-left: 169px;
   position: absolute;
   right: 0;
-  margin-right: 10px;
-  margin-top: 17px;
+  margin-right: 32px;
+  margin-top: 4px;
   visibility: hidden;
 }
 
@@ -405,7 +412,7 @@ progress::-webkit-progress-bar {
   position: absolute;
   width:22px;
   height:22px;
-  background-color: #23629F;
+  background-color: green;
   border-radius:11px;
   left:0;
   top:0;
@@ -427,4 +434,274 @@ progress::-webkit-progress-bar {
   background-color:#fff;
   left:8px;
   top:12px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#submit_quiz {
+  color: white;
+  background: #58a3d2;
+  float: right;
+  height: 43px;
+  width: 126px;
+  font-size: larger;
+}
+
+#left_pane {
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  background: #f1f1f1;
+  width: 85%;
+  padding: 20px;
+}
+
+#question_section {
+  float: left;
+  height: 100px;
+  width: 50%;
+}
+
+#question_number {
+  float: left;
+  font-size: x-large;
+  clear: left;
+  height: 50px;
+  width: 100%;
+  background: white;
+  text-align: center;
+}
+
+#qn_id {
+  float: left;
+  clear: left;
+  font-size: x-large;
+  background: white;
+  margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+.options_quiz {
+  padding-top: 8px;
+  padding-left: 20px;
+  float: right;
+  font-size: x-large;
+  clear: right;
+  width: 48%;
+  margin-bottom: 20px;
+  height: 50px;
+  background: white;
+}
+#answer_section {
+  float: right;
+  height: 100px;
+  width: 50%;
+}
+
+.dot {
+  height: 33px;
+  text-align: center;
+  padding-top: 2px;
+  width: 33px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#quiz_footer {
+  width: 85%;
+  height: 86px;
+  background-color: #414042;
+  position: absolute; 
+  bottom: 0;
+}
+#quiz_footer .moving_buttons .progress_btns {
+  margin-top: 22px;
+  margin-right: 20px;
+  float: right;
+  width: 12%;
+  height: 40px;
+  color: #fff;
+  background-color: #e64b50;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  text-align: center;
+}
+
+#quiz_footer .moving_buttons .progress_btns #next_btn{
+  position: absolute;
+  top: 5px;
+  bottom: 41px;
+  left: 200px;
+}
+
+#clear_btn {
+  position: absolute;
+  right:200px;
+  bottom: 41px;
+  top: 0px;
+}
+
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+  background:rgba(0,0,0,.4);
+  cursor:pointer;
+  display:none;
+  height:100%;
+  position:fixed;
+  text-align:center;
+  top:0;
+  width:100%;
+  z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+  background-color: #fff;
+  box-shadow: 10px 10px 60px #555;
+  display: inline-block;
+  height: auto;
+  max-width: 551px;
+  min-height: 100px;
+  vertical-align: middle;
+  width: 60%;
+  position: relative;
+  border-radius: 8px;
+  padding: 15px 5%;
+}
+.popupCloseButton {
+  background-color: #fff;
+  border: 3px solid #999;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: arial;
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 25px;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.popupCloseButton:hover {
+  background-color: #ccc;
+}
+.trigger_popup_fricc {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+/* Popup box BEGIN */
+
+#rightpane {
+  float: right;
+  width: 15%;
+}
+#media {
+  padding: 20px;
+  float: left;
+  clear: left;
+  font-size: x-large;
+  background: white;
+  margin-top: 10px;
+  width: 100%;
+  min-height: 100px;
+  text-align: center;
+}
+
+#percent_data {
+  position: absolute;
+  left: 40%;
+  top: 7px;
+  font-size: x-large;
+  color: white;
+}
+
+#unanswered_color {
+  width: 20px;
+  float: left;
+  margin-top: 10px;
+  clear: both;
+  height: 20px;
+  border-radius: 50%;
+  background: grey;
+}
+
+#bookmarked_color {
+  width: 20px;
+  float: left;
+  margin-top: 10px;
+  clear: both;
+  height: 20px;
+  border-radius: 50%;
+  background: #23629F;
+}
+
+#answered_color {
+  float: left;
+  margin-top: 10px;
+  clear: both;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #53a66b;
+}
+.color_legend {
+    float:left;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: large;
+}
+
+#colors_section {
+  margin-top: 20px;
+  margin-left: 40px;
 }

@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+
+#box {
+    position: absolute;
+    width:100px;
+    height:100px;
+    background:blue;
+}
+#counter_label {
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: .85em;
+}
+
+footer {
+    background-color: aquamarine;
+    height: 83px;
+    width: 100%;
+}

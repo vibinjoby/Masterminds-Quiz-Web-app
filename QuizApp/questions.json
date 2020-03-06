@@ -21,7 +21,9 @@
         "option_1": "worked not",
         "option_2": "don`t work",
         "option_3": "hasn`t worked",
-        "option_4": "didn`t work"
+        "option_4": "didn`t work",
+        "image_url":"abcd.png",
+        "is_image":"N"
     },
     "4": {
         "question": "    I tried to find you before school today. ......",
