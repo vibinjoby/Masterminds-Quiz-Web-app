@@ -1,0 +1,191 @@
+{
+    "1": {
+        "question": "Which is the odd one out?",
+        "correct_answer": "2",
+        "option_1": "Milk",
+        "option_2": "Salt",
+        "option_3": "Juice",
+        "option_4": "Coffee",
+        "is_image":"N"
+    },
+    "2": {
+        "question": "Find out which of the figures (1), (2), (3) and (4) can be formed from the pieces given in figure (X).",
+        "correct_answer": "2",
+        "option_1": "1",
+        "option_2": "2",
+        "option_3": "3",
+        "option_4": "4",
+        "is_image":"Y",
+        "image_url":"verbal_img_1.png"
+    },
+    "3": {
+        "question": "Seconds, Minutes, Hours Which of the words does NOT belong to the list of words above?",
+        "correct_answer": "4",
+        "option_1": "Decades",
+        "option_2": "Millennia",
+        "option_3": "Weeks",
+        "option_4": "Lightyears",
+        "is_image":"N"
+    },
+    "4": {
+        "question": "Eagle is to bird as rose is to:?",
+        "correct_answer": "3",
+        "option_1": "Red",
+        "option_2": "Gentleman",
+        "option_3": "Flower",
+        "option_4": "Beautiful",
+        "is_image":"N"
+    },
+    "5": {
+        "question": "Find out which of the figures (1), (2), (3) and (4) can be formed from the pieces given in figure (X).",
+        "correct_answer": "2",
+        "option_1": "1",
+        "option_2": "3",
+        "option_3": "2",
+        "option_4": "4",
+        "is_image":"Y",
+        "image_url":"verbal_img_2.png"
+    },
+    "6": {
+        "question": "Planet is to Tennis ball As Dice is to?",
+        "correct_answer": "4",
+        "option_1": "The Sun",
+        "option_2": "Football",
+        "option_3": "Apple",
+        "option_4": "Sugar Cubes",
+        "is_image":"N"
+    },
+    "7": {
+        "question": "Find out which of the figures (1), (2), (3) and (4) can be formed from the pieces given in figure (X).",
+        "correct_answer": "2",
+        "option_1": "1",
+        "option_2": "2",
+        "option_3": "3",
+        "option_4": "4",
+        "is_image":"Y",
+        "image_url":"verbal_img_3.png"
+    },
+    "8": {
+        "question": "Select a suitable figure from the four alternatives that would complete the figure matrix.",
+        "correct_answer": "3",
+        "option_1": "3",
+        "option_2": "1",
+        "option_3": "2",
+        "option_4": "4",
+        "is_image":"Y",
+        "image_url":"verbal_img_4.png"
+    },
+    "9": {
+        "question": "After driving professor Kumar to the museum she dropped him at his hotel.",
+        "correct_answer": "1",
+        "option_1": "After being driven to the museum, Professor Kumar was dropped at his hotel.",
+        "option_2": "Professor Kumar was being driven dropped at his hotel.",
+        "option_3": "After she had driven Professor Kumar to the museum she had dropped him at his hotel.",
+        "option_4": "After she was driven Professor Kumar to the museum she had dropped him at his hotel.",
+        "is_image":"N"
+    },
+    "10": {
+        "question": "Which of the following words are incorrectly spelt?",
+        "correct_answer": "3",
+        "option_1": "ordnance",
+        "option_2": "separate",
+        "option_3": "sucess",
+        "option_4": "none of these",
+        "is_image":"N"
+    },
+    "11": {
+         "question": "Find out which of the figures (1), (2), (3) and (4) can be formed from the pieces given in figure (X).",
+         "correct_answer": "1",
+         "option_1": "3",
+         "option_2": "2",
+         "option_3": "1",
+         "option_4": "4",
+         "is_image":"Y",
+         "image_url":"verbal_img_5.png"
+     },
+     "12": {
+         "question": "Find out which of the figures (1), (2), (3) and (4) can be formed from the pieces given in figure (X).",
+         "correct_answer": "2",
+         "option_1": "1",
+         "option_2": "2",
+         "option_3": "3",
+         "option_4": "4",
+         "is_image":"Y",
+         "image_url":"numerical_img_6.png"
+     },
+     "13": {
+         "question": "Find out which of the figures (1), (2), (3) and (4) can be formed from the pieces given in figure (X).",
+         "correct_answer": "3",
+         "option_1": "1",
+         "option_2": "2",
+         "option_3": "3",
+         "option_4": "4",
+         "is_image":"Y",
+         "image_url":"verbal_img_7.png"
+     },
+     "14": {
+         "question": "Working together, Tom, Dick and Harry need 9 hours to paint a 400 meter long fence. Working alone, Tom could complete the task in 18 hours. Dick can not work as fast and needs 36 hours to paint the fence by himself. If Tom and Dick take the day off, how long will it take Harry to paint the fence by himself?",
+         "correct_answer": "4",
+         "option_1": "9",
+         "option_2": "12",
+         "option_3": "18",
+         "option_4": "36",
+         "is_image":"N"
+     },
+     "15": {
+         "question": "Find out how will the key figure (X) look like after rotation.",
+         "correct_answer": "2",
+         "option_1": "1",
+         "option_2": "2",
+         "option_3": "3",
+         "option_4": "4",
+         "is_image":"Y",
+         "image_url":"verbal_img_8.png"
+     },
+     "16": {
+         "question": " Which of the statements hold true for conjugation?",
+         "correct_answer": "2",
+         "option_1": "Conjugation is the natural process of transferring DNA from one species to another",
+         "option_2": "It is the artificial process in case the cells are not able to take them up naturally",
+         "option_3": "The plasmids are transferred from one cell to another by physical contact",
+         "option_4": "The plasmids are transferred from one cell to another by chemical means",
+         "is_image":"N"
+     },
+     "17": {
+         "question": "This newspaper is a BIWEEKLY.",
+         "correct_answer": "3",
+         "option_1": "The newspaper is published once a week",
+         "option_2": "The newspaper is published three times a week",
+         "option_3": "The newspaper is published twice a week",
+         "option_4": "None",
+         "is_image":"N"
+     },
+     "18": {
+         "question": "Find out how will the key figure (X) look like after rotation.",
+         "correct_answer": "2",
+         "option_1": "1",
+         "option_2": "2",
+         "option_3": "3",
+         "option_4": "4",
+         "is_image":"Y",
+         "image_url":"verbal_img_9.png"
+     },
+     "19": {
+         "question": " We usually don't publish articles we don't PREVIEW.",
+         "correct_answer": "1",
+         "option_1": "We usually read articles before publication",
+         "option_2": "We do not read articles after publication",
+         "option_3": "We read articles the day we publish them",
+         "option_4": " None of these",
+         "is_image":"N"
+     },
+     "20": {
+         "question": "A person who renounces the world and practices self-discipline in order to attain salvation",
+         "correct_answer": "2",
+         "option_1": "Sceptic",
+         "option_2": "Ascetic",
+         "option_3": "Devotee",
+         "option_4": "Antiquarian",
+         "is_image":"N"
+     }
+}

@@ -1,0 +1,155 @@
+html {
+    background-color: #ffffff;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    margin: 0px;
+  }
+  #topBar-first {
+      height : 57px;
+      background: #414042;
+    }
+    .logo {
+      margin-top: 10px;
+      margin-left: 20px;
+      width: 25px;
+      height: 25px;
+    }
+    .name {
+      width: 75px;
+      height: 10px;
+    margin-bottom: 7px;
+      margin-left: 10px;
+    }
+    #app_logo {
+      position: absolute;
+      left: 90px;
+      top: 12px;
+    }
+    #app_name {
+      position: absolute;
+      left: 140px;
+      top: 12px;
+    }
+ 
+    .headingCentered2 {
+        margin-top: 14px;
+        margin-right: 20%;
+        text-align: right;
+        font-size: 2.5em;
+        font-weight: 700;
+        font-family: open sans condensed,sans-serif;
+    }
+    #piechart {
+        background-image: none;
+        position: absolute;
+        top: 20%;
+        margin-left: 50px;
+    }
+    #right_content {
+        position: absolute;
+        top: 25%;
+        right: 0;
+        margin-right: 30%;
+    }
+   table {
+
+       font-size: 25px;
+       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   }
+  
+
+   #bottom_content {
+       top: 60%;
+       margin-right: 50px;
+       right: 0;
+    position: absolute;
+    width: 610px;
+    height: 90px;
+    border-style: ridge;
+  }
+
+  #congrats {
+      font-weight: bold;
+      color: maroon;
+      font-style: italic;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 25px;
+      position: absolute;
+      top: 51%;
+      margin-right: 250px;
+      right: 0;
+  }
+
+  #bottom_content p {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #0a8a3f;
+      font-size: 20px;
+      font-weight: bold;
+  }
+  
+  #bottom_buttons {
+    top: 80%;
+    margin-right: 50px;
+    right: 0;
+ position: absolute;
+ width: 610px;
+ height: 90px;
+}
+
+.bottom_buttons {
+    width: 200px;
+    height: 35px;
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+    }
+    .bottom_buttons:hover{
+    background-color:#4095c6;
+    }
+    @media all and (max-width:30em){
+         .bottom_buttons{
+        display:block;
+        margin:0.2em auto;
+        }
+        }
+
+        #topBar-second {
+          height: 61px;
+          display: inline-flex;
+          background: #23629F;
+          color: #c6c4c4;
+        }
+        #top-bar-contents {
+          position: absolute;
+          right: 0;
+          font-size: larger;
+          margin-top: 21px;
+          float: right;
+        }
+        
+        .verticalLine {
+          border-left: 2px solid white;
+          margin-right: 42px;
+          margin-left: 20px;
+          height: 20px;
+        }
+
+
+
+  
+
+
+
+  

@@ -1,0 +1,192 @@
+{
+    "1": {
+        "question": "Which of the given shapes would complete the sequence?",
+        "correct_answer": "3",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_1.jpg"
+    },
+    "2": {
+        "question": "Which of the given shapes would complete the sequence?",
+        "correct_answer": "4",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_2.jpg"
+    },
+    "3": {
+        "question": "Which of the given shapes would complete the sequence?",
+        "correct_answer": "1",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_3.jpg"
+    },
+    "4": {
+        "question": "Which of the given shapes would complete the sequence?",
+        "correct_answer": "2",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_4.jpg"
+    },
+    "5": {
+       "question": "Which of the given shapes would complete the sequence?",
+        "correct_answer": "1",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_5.jpg"
+    },
+    "6": {
+        "question": "Which shape would complete the image??",
+        "correct_answer": "3",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_6.jpg"
+    },
+    "7": {
+        "question": "Which of the given shapes fits the pattern in the sample images?",
+        "correct_answer": "2",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_7.jpg"
+    },
+    "8": {
+       "question": "Which of the given shapes fits the pattern in the sample images?",
+        "correct_answer": "4",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_8.jpg"
+    },
+    "9": {
+        "question": "Following the below rules, work out what the new sequence of shapes would look lik Rules: AA - Reverse the order of the entire sequence AB - Swap the position of the first and last shape AC - All white squares become orange circles AD - Every shape to the left of a circle is flipped upside down BC - Swap the 2nd and 5th shapes’ positions BD - Move the 3rd shape to the end of the sequence CD - All orange shapes become blue",
+        "correct_answer": "2",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_9.jpg"
+    },
+    "10": {
+        "question": "Which of the given shapes fits the pattern in the sample images?",
+        "correct_answer": "3",
+        "option_1": "A",
+        "option_2": "B",
+        "option_3": "C",
+        "option_4": "D",
+        "is_image":"Y",
+        "image_url":"logical_img_10.jpg"
+    },
+    "11": {
+        "question": "Violating an Apartment Lease occurs when a tenant does something prohibited by the legally binding document that he or she has signed with a landlord. Which situation below is the best example of Violating an Apartment Lease?",
+        "correct_answer": "2",
+        "option_1": "Tim has decided to move to another city, so he calls his landlord to tell him that he is not interested in renewing his lease when it expires next month.",
+        "option_2": "Valerie recently lost her job and, for the last three months, has neglected to pay her landlord the monthly rent they agreed upon in writing when she moved into her apartment eight months ago.",
+        "option_3": "Mark writes a letter to his landlord that lists numerous complaints about the apartment he has agreed to rent for two years.",
+        "option_4": "Leslie thinks that her landlord is neglecting the building in which she rents an apartment. She calls her attorney to ask for advice.",
+        "is_image":"N"
+    },
+    "12": {
+        "question": "It is appropriate to compensate someone if you have damaged his or her property in some way. This is called Restitution.Which situation below is the best example of Restitution?",
+         "correct_answer": "1",
+         "option_1": " Jake borrows Leslie’s camera and the lens shatters when it falls on the ground because he fails to zipper the case.When Jake returns the camera, he tells Leslie that he will pay for the repair.",
+         "option_2": "Rebecca borrows her neighbor’s car, and when she returns it, the gas tank is practically empty. She apologizes profusely and tells her neighbor she will be more considerate the next time.",
+         "option_3": "Aaron asks Tom to check in on his apartment while he is out of town.When Tom arrives, he discovers that a pipe has burst and there is a considerable amount of water damage. He calls a plumber to repair the pipe.",
+         "option_4": " Lisa suspects that the pothole in her company’s parking lot caused her flat tire. She tells her boss that she thinks the company should pay for the repair.",
+         "is_image":"N"
+    },
+    "13": {
+        "question": "Posthumous Publication occurs when a book is published after the author’s death. Which situation below is the best example of Posthumous Publication?",
+         "correct_answer": "1",
+         "option_1": "Richard’s illness took his life before he was able to enjoy the amazing early reviews of his novel.",
+         "option_2": "Melissa’s publisher cancels her book contract after she fails to deliver the manuscript on time.",
+         "option_3": "Clarence never thought he’d live to see the third book in his trilogy published.",
+         "option_4": "Elizabeth is honoured with a prestigious literary award for her writing career and her daughter accepts the award on behalf of her deceased mother.",
+         "is_image":"N"
+    },
+    "14": {
+        "question": " Erratic Behavior occurs when an individual acts in a manner that lacks consistency, regularity, and uniformity. Which situation below is the best example of Erratic Behavior?",
+         "correct_answer": "4",
+         "option_1": "Julia cannot contain her anger whenever the subject of local politics is discussed",
+         "option_2": " Martin has just been told that he is being laid off. Before leaving his supervisor's office, he punches a hole in the door",
+         "option_3": "Rhonda has visited the dealership several times, but she still cannot decide which car to buy",
+         "option_4": "In the past month, Jeffrey, who has been a model employee for three years, has repeatedly called in sick, forgotten important meetings, and been verbally abusive to colleagues",
+         "is_image":"N"
+    },
+    "15": {
+       "question": "Resilience is usually thought of as the end product of an effective coping mechanism(s) when people are under stress. Which situation below is the best example of a resilience?",
+        "correct_answer": "2",
+        "option_1": "They lack comprehension of anything beyond the material sphere of the five senses.",
+        "option_2": "John’s family is not only surviving difficult times, but being able to thrive despite adversity.",
+        "option_3": "Hereditary factors that contribute to personality development do so as a result of interactions with the particular social environment in which people live.",
+        "option_4": "When people who don't persist enough fail is not that they are failing more than the average person, it's because they just give up too soon.",
+        "is_image":"N"
+    },
+    "16": {
+        "question": " People speculate when they consider a situation and assume something to be true based on inconclusive evidence. Which situation below is the best example of Speculation?",
+         "correct_answer": "4",
+         "option_1": "Francine decides that it would be appropriate to wear jeans to her new office on Friday after reading about 'Casual Fridays' in her employee handbook",
+         "option_2": "Mary spends thirty minutes sitting in traffic and wishes that she took the train instead of driving",
+         "option_3": "After consulting several guidebooks and her travel agent, Jennifer feels confident that the hotel she has chosen is first-rate",
+         "option_4": "When Emily opens the door in tears, Theo guesses that she's had a death in her family",
+         "is_image":"N"
+    },
+    "17": {
+        "question": "Establishing a Power of Attorney occurs when a legal document is created that gives one individual the authority to act for another. Which situation below is the best example of Establishing a Power of Attorney?",
+         "correct_answer": "2",
+         "option_1": "Louise is selling her house and she hires a lawyer to review the contract.",
+         "option_2": "Simone's mother can no longer get to the bank to cash her checks and make deposits, so she has taken legal steps to enable Simone to do these things for her",
+         "option_3": " Jack's father is elderly and Jack thinks he is no longer able to make decisions for himself.",
+         "option_4": "At her daughter's urging, Mrs. Lenox opens up a retirement account with the local bank",
+         "is_image":"N"
+    },
+    "18": {
+       "question": "Posthumous Publication occurs when a book is published after the author's death. Which situation below is the best example of Posthumous Publication ?",
+        "correct_answer": "1",
+        "option_1": "Richard's illness took his life before he was able to enjoy the amazing early reviews of his novel.",
+        "option_2": "Melissa's publisher cancels her book contract after she fails to deliver the manuscript on time.",
+        "option_3": "Clarence never thought he'd live to see the third book in his trilogy published.",
+        "option_4": "Elizabeth is honored with a prestigious literary award for her writing career and her daughter accepts the award on behalf of her deceased mother.",
+        "is_image":"N"
+    },
+    "19": {
+        "question": "A Guarantee is a promise or assurance that attests to the quality of a product that is either (1) given in writing by the manufacturer or (2) given verbally by the person selling the product. Which situation below is the best example of a Guarantee?",
+         "correct_answer": "4",
+         "option_1": "Melissa purchases a DVD player with the highest consumer ratings in its category.",
+         "option_2": "The salesperson advises Curt to be sure that he buys an air conditioner with a guarantee.",
+         "option_3": "The local auto body shop specializes in refurbishing and selling used cars.",
+         "option_4": "Lori buys a used digital camera from her coworker who says that she will refund Lori's money if the camera's performance is not of the highest quality.",
+         "is_image":"N"
+    },
+    "20": {
+        "question": "Erratic Behavior occurs when an individual acts in a manner that lacks consistency, regularity, and uniformity. Which situation below is the best example of Erratic Behavior?",
+         "correct_answer": "4",
+         "option_1": "Julia cannot contain her anger whenever the subject of local politics is discussed.",
+         "option_2": "Martin has just been told that he is being laid off. Before leaving his supervisor's office, he punches a hole in the door.",
+         "option_3": "Rhonda has visited the dealership several times, but she still cannot decide which car to buy.",
+         "option_4": "In the past month, Jeffrey, who has been a model employee for three years, has repeatedly called in sick, forgotten important meetings, and been verbally abusive to colleagues.",
+         "is_image":"N"
+    }
+}

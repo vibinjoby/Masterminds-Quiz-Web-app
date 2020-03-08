@@ -1,0 +1,182 @@
+{
+    "1": {
+        "question": "The movie offended many of the parents of its younger viewers by including unnecessary ______ in the dialogue.?",
+        "correct_answer": "1",
+        "option_1": "vulgarity",
+        "option_2": "verbosity",
+        "option_3": "vocalizations",
+        "option_4": "garishness",
+        "is_image":"N"
+    },
+    "2": {
+        "question": "His neighbors found his ______ manner bossy and irritating, and they stopped inviting him to backyard barbeques.",
+        "correct_answer": "2",
+        "option_1": "insentient",
+        "option_2": "magisterial",
+        "option_3": "reparatory",
+        "option_4": "restorative",
+        "is_image":"N"
+    },
+    "3": {
+        "question": "Steven is always ______ about showing up for work because he feels that tardiness is a sign of irresponsibility",
+        "correct_answer": "2",
+        "option_1": "legible",
+        "option_2": "punctual",
+        "option_3": "tolerable",
+        "option_4": "belligerent",
+        "is_image":"N"
+    },
+    "4": {
+        "question": "Levina unknowingly ______ the thief by holding open the elevator doors and ensuring his escape.",
+        "correct_answer": "2",
+        "option_1": "coerced",
+        "option_2": "abetted",
+        "option_3": "sanctioned",
+        "option_4": "solicited",
+        "is_image":"N"
+    },
+    "5": {
+        "question": "Candace would ______ her little sister into an argument by teasing her and calling her names.",
+        "correct_answer": "4",
+        "option_1": "advocate",
+        "option_2": "perforate",
+        "option_3": "lamente",
+        "option_4": "provoke",
+        "is_image":"N"
+    },
+    "6": {
+        "question": "The dress Ariel wore ______ with small, glassy beads, creating a shimmering effect",
+        "correct_answer": "3",
+        "option_1": "titillated",
+        "option_2": "enthralled",
+        "option_3": "scintillated",
+        "option_4": "striated",
+        "is_image":"N"
+    },
+    "7": {
+        "question": "Being able to afford this luxury car will ______ getting a betterpaying job.",
+        "correct_answer": "4",
+        "option_1": "maximize",
+        "option_2": "recombinant",
+        "option_3": "reiterate",
+        "option_4": "necessitate",
+        "is_image":"N"
+    },
+    "8": {
+        "question": "Shakespeare, a(n) ______ writer, entertained audiences by writing many tragic and comic plays",
+        "correct_answer": "1",
+        "option_1": "prolific",
+        "option_2": "numeric",
+        "option_3": "obstinate",
+        "option_4": "dutiful",
+        "is_image":"N"
+    },
+    "9": {
+        "question": "I had the ______ experience of sitting next to an over-talkative passenger on my flight home from Brussels.",
+        "correct_answer": "2",
+        "option_1": "acceptable",
+        "option_2": "galling.",
+        "option_3": "commendable",
+        "option_4": "acute",
+        "is_image":"N"
+    },
+    "10": {
+        "question": "Prince Phillip had to choose: marry the woman he loved and ______ his right to the throne, or marry Lady Fiona and inherit the crown.",
+        "correct_answer": "3",
+        "option_1": "reprimand",
+        "option_2": "upbraid",
+        "option_3": "abdicate",
+        "option_4": "extol",
+        "is_image":"N"
+    },
+    "11": {
+         "question": "If you will not do your work of your own ______, I have no choice but to penalize you if it is not done on time",
+         "correct_answer": "2",
+         "option_1": "predilection",
+         "option_2": "volition",
+         "option_3": "excursion",
+         "option_4": "infusion",
+         "is_image":"N"
+     },
+     "12": {
+         "question": "Giulia soon discovered the source of the ______ smell in the room: a week-old tuna sandwich that one of the children had hidden in the closet.",
+         "correct_answer": "2",
+         "option_1": "quaint",
+         "option_2": "fetid",
+         "option_3": "fastidious",
+         "option_4": "laconic",
+         "is_image":"N"
+     },
+     "13": {
+         "question": "After making ______ remarks to the President, the reporter was not invited to return to the White House pressroom.",
+         "correct_answer": "4",
+         "option_1": "hospitable",
+         "option_2": "itinerant",
+         "option_3": "enterprising",
+         "option_4": "irreverent",
+         "is_image":"N"
+     },
+     "14": {
+         "question": "With her ______ eyesight, Krystyna spotted a trio of deer on the hillside and she reduced the speed of her car.",
+         "correct_answer": "2",
+         "option_1": "inferior",
+         "option_2": "keen",
+         "option_3": "impressionable",
+         "option_4": "conspiratorial",
+         "is_image":"N"
+     },
+     "15": {
+         "question": "With a(n) ______ grin, the boy quickly slipped the candy into his pocket without his mother’s knowledge.",
+         "correct_answer": "4",
+         "option_1": "jaundiced",
+         "option_2": "stereotypical",
+         "option_3": "sentimental",
+         "option_4": "nefarious",
+         "is_image":"N"
+     },
+     "16": {
+         "question": " Her ______ display of tears at work did not impress her new boss, who felt she should try to control her emotions.",
+         "correct_answer": "1",
+         "option_1": "maudlin",
+         "option_2": "meritorious",
+         "option_3": "precarious",
+         "option_4": "plausible",
+         "is_image":"N"
+     },
+     "17": {
+         "question": "Johan argued, “If you know about a crime but don’t report it, you are ______ in that crime because you allowed it to happen.”",
+         "correct_answer": "2",
+         "option_1": "steadfast",
+         "option_2": "complicit",
+         "option_3": "tenuous",
+         "option_4": "None",
+         "is_image":"N"
+     },
+     "18": {
+         "question": "The authorities, fearing a ______ of their power, called for a military state in the hopes of restoring order.",
+         "correct_answer": "1",
+         "option_1": "subversion",
+         "option_2": "premonition",
+         "option_3": "predilection",
+         "option_4": "infusion",
+         "is_image":"N"
+     },
+     "19": {
+         "question": "The story’s bitter antagonist felt such great ______ for all of the other characters that as a result, his life was very lonely and he died alone.",
+         "correct_answer": "3",
+         "option_1": "insurgence",
+         "option_2": "reciprocation",
+         "option_3": "malevolence",
+         "option_4": "declamation",
+         "is_image":"N"
+     },
+     "20": {
+         "question": "It is difficult to believe that charging 20% on an outstanding credit card balance isn’t ______!",
+         "correct_answer": "3",
+         "option_1": "bankruptcy",
+         "option_2": "novice",
+         "option_3": "usury",
+         "option_4": "kleptomania",
+         "is_image":"N"
+     }
+}

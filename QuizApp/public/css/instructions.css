@@ -1,0 +1,111 @@
+body{
+    background-color: #ffffff;
+    margin: 0;
+  } 
+  .container {
+      margin-top: 80px;
+    padding-right: 70px;
+      padding-left: 10px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+  .wrapper{
+    min-height: 100vh;
+    /* background: #ccc; */
+    display: flex;
+    flex-direction: column;
+  }
+  #topBar-first {
+    height : 57px;
+    background: #414042;
+  }
+  .logo {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+  }
+  .name {
+    width: 75px;
+    height: 10px;
+  margin-bottom: 7px;
+    margin-left: 10px;
+  }
+  #app_logo {
+    position: absolute;
+    left: 90px;
+    top: 12px;
+  }
+  #app_name {
+    position: absolute;
+    left: 140px;
+    top: 12px;
+  }
+
+  #user_name {
+    font-size: larger;
+    position: absolute;
+    right: 132px;
+    top: 17px;
+    color:#fff;
+  }
+  #signout-btn {
+    background: #23629F;
+    color:#fff;
+    border: 0;
+    font-size: small;
+    height: 31px;
+    width: 93px;
+    margin-top: 13px;
+    border-radius: 3px;
+    float: right;
+    margin-right: 20px;
+  }
+
+.note11 {
+    background: #efefef;
+    height: 20px;
+    font-size: 16px;
+    padding: 5px 0px;
+    padding-left: 8px;
+    font-weight: bold;
+}
+
+.start {
+  border-radius: 5px;
+    background: #05acd6;
+    height: 37px;
+    color: #FFF !important;
+    text-align: center;
+    width: 158px;
+    -moz-margin-top: 6px;
+    margin-top: 18px;
+    font-size: 12px;
+    font-family: 'OpenSansRegular';
+    border: none;
+    font-weight: bold;
+    padding-top: 0px;
+    cursor: pointer;
+}
+.container {
+  width: 750px;
+  height: 450px;
+  border-style: ridge;
+}
+.note_section {
+  margin-top: 25px;
+}
+.ins {
+  margin-left: 15px;
+  margin-top: 5px;
+  font-size: 18px;
+  color: green;
+}
+.on_test {
+  font-size: 30px;
+  color: #23629F;
+  font-weight: bolder;
+}
+#quesbox {
+  margin-top: 15px;
+}

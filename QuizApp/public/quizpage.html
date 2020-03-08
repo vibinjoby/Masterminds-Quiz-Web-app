@@ -12,33 +12,28 @@
         <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
         <img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" />
         <label id="user_name">Welcome Vibin</label>
-        <button id="signout-btn">Exit Test</button>
+        <button id="signout-btn" onclick="onExitTest()">Exit Test</button>
     </header>
     <section id="topBar-second">
-        <label id="time_counter_real_quiz" value="time left">Time Left: <span id="time">05:00</span> mins</label>
-        <button id="submit_quiz">Submit</button>
+        <label id="time_counter_real_quiz" value="time left">Time Left: <span id="time">00:00</span> mins</label>
+        <button id="submit_quiz" onclick="window.location.href='scorepage.html'">Submit</button>
     </section>
 
     <section id="left_pane">
         <section id="question_section">
             <label id="question_number">Question : <span class="current_question"></span>
-                <span><img id="flagged_qn" src="assets/flag_before_click.png" alt="app_logo" height="35" width="35"
-                        onclick="changeImage()" /></span></label>
+                <span id="optional_bookmark"><img id="flagged_qn" src="assets/flag_before_click.png" alt="app_logo"
+                        height="35" width="35" onclick="changeImage()" /></span></label>
             <label id="qn_id">What name is ?</label>
             <section id="media">
-                    <!-- <img id="question_img" height="200" width="300" alt="question_img" src="assets/india_flag.jpg" /> -->
-                    <!-- <audio controls id="audio_qn">
-                            <source src="assets/sample_mp3.mp3" type="audio/mp3">
-                    </audio> -->
-                    <video width="320" height="240" controls id="video_qn">
-                            <source src="assets/sample_mp4.mp4" type="video/mp4">
-                    </video>
+                <img id="question_img" alt="question_img" />
             </section>
         </section>
         <section id="answer section">
             <label class="options_quiz">Options</label>
             <section id="option1_li" class="options_quiz" onclick="onAnswerSelected(option1_li)">
                 <span class="dot">A</span>&nbsp;&nbsp;<label id="option1"> Answer 1</label>
+                <span id="option1_error" class="error_answer">&#x2716;</span>
                 <span class="checkmark" id="option1_check">
                     <div class="checkmark_circle"></div>
                     <div class="checkmark_stem"></div>
@@ -47,6 +42,7 @@
             </section>
             <section id="option2_li" class="options_quiz" onclick="onAnswerSelected(option2_li)">
                 <span class="dot">B</span>&nbsp;&nbsp;<label id="option2"> Answer 2</label>
+                <span id="option2_error" class="error_answer">&#x2716;</span>
                 <span class="checkmark" id="option2_check">
                     <div class="checkmark_circle"></div>
                     <div class="checkmark_stem"></div>
@@ -56,6 +52,7 @@
             </section>
             <section id="option3_li" class="options_quiz" onclick="onAnswerSelected(option3_li)">
                 <span class="dot">C</span>&nbsp;&nbsp;<label id="option3"> Answer 3</label>
+                <span id="option3_error" class="error_answer">&#x2716;</span>
                 <span class="checkmark" id="option3_check">
                     <div class="checkmark_circle"></div>
                     <div class="checkmark_stem"></div>
@@ -65,11 +62,16 @@
             </section>
             <section id="option4_li" class="options_quiz" onclick="onAnswerSelected(option4_li)">
                 <span class="dot">D</span>&nbsp;&nbsp;<label id="option4">Answer 4</label>
+                <span id="option4_error" class="error_answer">&#x2716;</span>
                 <span class="checkmark" id="option4_check">
                     <div class="checkmark_circle"></div>
                     <div class="checkmark_stem"></div>
                     <div class="checkmark_kick"></div>
                 </span>
+            </section>
+
+            <section id="correct_answer" class="options_quiz">
+                <label>Correct answer is: <span id="correct_answer_sp">D</span></label>
             </section>
         </section>
     </section>
@@ -81,21 +83,23 @@
         <hr color="black">
         <section class="question_number">
             <input id="qn_1" type="button" value="1" onclick="onQuestionSelected(qn_1)" />
-            <input id="qn_2" type="button" class="two" value="2" onclick="onQuestionSelected(qn_2)" />
-            <input id="qn_3" type="button" class="three" value="3" onclick="onQuestionSelected(qn_3)" />
-            <input id="qn_4" type="button" class="four" value="4" onclick="onQuestionSelected(qn_4)" />
-            <input id="qn_5" type="button" class="five" value="5" onclick="onQuestionSelected(qn_5)" />
-            <input id="qn_6" type="button" class="six" value="6" onclick="onQuestionSelected(qn_6)" />
-            <input id="qn_7" type="button" class="seven" value="7" onclick="onQuestionSelected(qn_7)" />
-            <input id="qn_8" type="button" class="eight" value="8" onclick="onQuestionSelected(qn_8)" />
-            <input id="qn_9" type="button" class="nine" value="9" onclick="onQuestionSelected(qn_9)" />
-            <input id="qn_10" type="button" class="ten" value="10" onclick="onQuestionSelected(qn_10)" />
+            <input id="qn_2" type="button" value="2" onclick="onQuestionSelected(qn_2)" />
+            <input id="qn_3" type="button" value="3" onclick="onQuestionSelected(qn_3)" />
+            <input id="qn_4" type="button" value="4" onclick="onQuestionSelected(qn_4)" />
+            <input id="qn_5" type="button" value="5" onclick="onQuestionSelected(qn_5)" />
+            <input id="qn_6" type="button" value="6" onclick="onQuestionSelected(qn_6)" />
+            <input id="qn_7" type="button" value="7" onclick="onQuestionSelected(qn_7)" />
+            <input id="qn_8" type="button" value="8" onclick="onQuestionSelected(qn_8)" />
+            <input id="qn_9" type="button" value="9" onclick="onQuestionSelected(qn_9)" />
+            <input id="qn_10" type="button" value="10" onclick="onQuestionSelected(qn_10)" />
         </section>
 
         <section id="colors_section">
             <section id="unanswered_color"></section><label class="color_legend">Unanswered</label>
             <section id="answered_color"></section><label class="color_legend">Answered</label>
-            <section id="bookmarked_color"></section><label class="color_legend">Bookmarked</label>
+            <span id="optional_tag">
+                <section id="bookmarked_color"></section><label class="color_legend">Bookmarked</label>
+            </span>
         </section>
     </section>
 
@@ -104,9 +108,26 @@
             <label id="percent_data">0 % complete</label>
             <progress id="progress_percent" value="0" max="100"></progress>
             <button class="progress_btns" id="clear_btn" onclick="onClearClick()">Clear Selection</button>
-            <button class="progress_btns" id="next_btn" onclick="onNextClick()">Save & Next ></button>
+            <button class="progress_btns" id="prev_btn" onclick="onPreviousClick()">
+                < Previous</button> <button class="progress_btns" id="next_btn" onclick="onNextClick()">Save & Next >
+            </button>
+            <button class="progress_btns" id="submit_btn" onclick="onSubmitClick()">Submit Quiz</button>
         </section>
     </section>
+    <!-- The Modal popup-->
+    <div id="myModal" class="modal">
+        <!-- Modal popup content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Are You sure you want to navigate to the next question..You have an unanswered question</h2>
+            </div>
+            <div class="modal-body">
+                <button id="cancel_btn_popup" class="progress_btns">Cancel</button>
+                <button id="ok_btn_popup" class="progress_btns">OK</button>
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>

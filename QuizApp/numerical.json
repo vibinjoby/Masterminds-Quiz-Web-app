@@ -1,0 +1,192 @@
+{
+    "1": {
+        "question": "Three friends split an amount of money. Julie gets 268 dollars, Michael gets 200 dollars and Lilly gets 40 percent. What is the amount?",
+        "correct_answer": "4",
+        "option_1": "720 dollars",
+        "option_2": "820 dollars",
+        "option_3": "760 dollars",
+        "option_4": "780 dollars",
+        "is_image":"N"
+    },
+    "2": {
+        "question": "What is the missing number that should replace the question mark?",
+        "correct_answer": "1",
+        "option_1": "0",
+        "option_2": "11",
+        "option_3": "6",
+        "option_4": "1",
+        "is_image":"Y",
+        "image_url":"numerical_img_1.png"
+    },
+    "3": {
+        "question": "Flight 945 passed over Paris at 04:45 and later over Amsterdam at 06:15. The distance between Paris and Amsterdam is 450 miles, what was the average speed of the aircraft?",
+        "correct_answer": "4",
+        "option_1": "450 mph",
+        "option_2": "525 mph",
+        "option_3": "675 mph",
+        "option_4": "300 mph",
+        "is_image":"N"
+    },
+    "4": {
+        "question": "Michael is 52 years old today, making him 25 years older than Brian. Peter was 5 years younger than Brian and 10 years older than Jane five years ago. How old will Jane be five years from now?",
+        "correct_answer": "3",
+        "option_1": "12",
+        "option_2": "7",
+        "option_3": "17",
+        "option_4": "22",
+        "is_image":"N"
+    },
+    "5": {
+        "question": "If Chinese Insurance Stocks comprise 3.5% of all Insurance securities (globally), approximately how many Insurance bonds are Chinese?",
+        "correct_answer": "3",
+        "option_1": "9,200,000",
+        "option_2": "910,000",
+        "option_3": "9,500,000",
+        "option_4": "1,080,000",
+        "is_image":"Y",
+        "image_url":"numerical_img_4.png"
+    },
+    "6": {
+        "question": "The year is 2012. Dylan is the oldest and will turn 25 in the year of 2015. John is half the age of Dylan, and Mike is four years older than John. How old will John be in 2015?",
+        "correct_answer": "2",
+        "option_1": "18",
+        "option_2": "14",
+        "option_3": "20",
+        "option_4": "15",
+        "is_image":"N"
+    },
+    "7": {
+        "question": "What businesses combined contribute 50% of the annual income?",
+        "correct_answer": "4",
+        "option_1": "Restaurants, Bars & Clubs",
+        "option_2": "Restaurants, Bars & Coffee shops",
+        "option_3": "Clubs & Cinemas",
+        "option_4": "Restaurants & Cinemas",
+        "is_image":"Y",
+        "image_url":"numerical_img_3.png"
+    },
+    "8": {
+        "question": "How many more employed graduates were there in 1990 than in 2000?",
+        "correct_answer": "3",
+        "option_1": "75",
+        "option_2": "360",
+        "option_3": "485",
+        "option_4": "135",
+        "is_image":"Y",
+        "image_url":"numerical_img_2.png"
+    },
+    "9": {
+        "question": "If the temperature decreases by 2 degrees per 1,000 feet of gained altitude and if the temperature at sea level is 25 degrees, what would the temperature at 35,000 feet be?",
+        "correct_answer": "2",
+        "option_1": "-70",
+        "option_2": "-45",
+        "option_3": "-10",
+        "option_4": "-35",
+        "is_image":"N"
+    },
+    "10": {
+        "question": "At a grocery store grapes cost 30 cents per ounce. Sheila buys grapes and ends up paying $3.60. How many ounces did she buy?",
+        "correct_answer": "2",
+        "option_1": "14 ounces",
+        "option_2": "12 ounces",
+        "option_3": "11 ounces",
+        "option_4": "10 ounces",
+        "is_image":"N"
+    },
+    "11": {
+         "question": "Approximately how many USD can be purchased for 2550 CHF at the end of 2012? (*% changes refer to THB.)",
+         "correct_answer": "2",
+         "option_1": "250,952",
+         "option_2": "3187",
+         "option_3": "3209",
+         "option_4": "2231",
+         "is_image":"Y",
+         "image_url":"numerical_img_5.png"
+     },
+     "12": {
+         "question": "In percentages, how much more USD will one get when exchanging 1,223,500 JPY compared to exchanging 9,750 EUR?",
+         "correct_answer": "4",
+         "option_1": "88.3%",
+         "option_2": "35.5%",
+         "option_3": "90.2%",
+         "option_4": "13.3%",
+         "is_image":"Y",
+         "image_url":"numerical_img_6.png"
+     },
+     "13": {
+         "question": "What will Hugh's profits be in April, assuming his profits will be 25% below his average from the first quarter?",
+         "correct_answer": "4",
+         "option_1": "$10,000",
+         "option_2": "$15,000",
+         "option_3": "$14,000",
+         "option_4": "$12,000",
+         "is_image":"Y",
+         "image_url":"numerical_img_7.png"
+     },
+     "14": {
+         "question": "Due to an increase in taxes on electronic devices, the price of a 46” LED flat TV screen has increased to £845, which is 30% increase of the original price. What was the original price of the TV prior to the increase?",
+         "correct_answer": "3",
+         "option_1": "£515.45",
+         "option_2": "£591.50",
+         "option_3": "£650",
+         "option_4": " £768.95",
+         "is_image":"N"
+     },
+     "15": {
+         "question": "Approximately, how much did Company X pay for two-fifths of June's available storage volume, in GBP?",
+         "correct_answer": "2",
+         "option_1": " £181,635",
+         "option_2": "£408,678",
+         "option_3": "£363,269",
+         "option_4": "Cannot say",
+         "is_image":"Y",
+         "image_url":"numerical_img_10.png"
+     },
+     "16": {
+         "question": "The sum of three numbers is 98. If the ratio of the first to second is 2 :3 and that of the second to the third is 5 : 8, then the second number is:?",
+         "correct_answer": "2",
+         "option_1": "20",
+         "option_2": "30",
+         "option_3": "48",
+         "option_4": "58",
+         "is_image":"N"
+     },
+     "17": {
+         "question": "The ratio of the number of boys and girls in a college is 7 : 8. If the percentage increase in the number of boys and girls be 20% and 10% respectively, what will be the new ratio?",
+         "correct_answer": "3",
+         "option_1": "8 : 9",
+         "option_2": "17 : 18",
+         "option_3": "21 : 22",
+         "option_4": "Cannot be determined",
+         "is_image":"N"
+     },
+     "18": {
+         "question": "Loans by kids and teenegers under the age of 20 increased by 15% the following year(year 2016) How many loans were there in 2016 among those  under the age of 20?",
+         "correct_answer": "4",
+         "option_1": "156,000",
+         "option_2": "184,900",
+         "option_3": "161,300",
+         "option_4": "179,400",
+         "is_image":"Y",
+         "image_url":"numerical_img_9.png"
+     },
+     "19": {
+         "question": "Two number are in the ratio 3 : 5. If 9 is subtracted from each, the new numbers are in the ratio 12 : 23. The smaller number is:",
+         "correct_answer": "3",
+         "option_1": "27",
+         "option_2": "49",
+         "option_3": "33",
+         "option_4": "55",
+         "is_image":"N"
+     },
+     "20": {
+         "question": "In Brewing Company sold a total of 140 million bottles of  B-BEER and 85 million bottles of C-BEER in the year 2010.",
+         "correct_answer": "1",
+         "option_1": "27.6 million",
+         "option_2": "23.6 million",
+         "option_3": "25.7 million",
+         "option_4": "24.6 million",
+         "is_image":"Y",
+         "image_url":"numerical_img_8.png"
+     }
+}

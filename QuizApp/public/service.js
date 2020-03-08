@@ -50,22 +50,23 @@ app.get('/checkUserExists', (req, res) => {
     let usersObj = JSON.parse(data);
     // check user exists
     for (var key in usersObj.users) {
-      if(JSON.stringify(usersObj.users[key].name)===JSON.stringify(userNameObj.name)){
+      if(JSON.stringify(usersObj.users[key].username)===JSON.stringify(userNameObj.username)
+      && JSON.stringify(usersObj.users[key].password)===JSON.stringify(userNameObj.password)){
         foundUserObj = usersObj.users[key];
       }
     }
     if(foundUserObj == null) {
       res.end(null);
     } else {
-      res.end(JSON.stringify(foundUserObj));
+      console.log(foundUserObj);
     }
   });
 });
-
 app.listen(8000);
 
 app.get('/fetchQuestions',(req,res) => {
-  fs.readFile('questions.json', (err, data) => {
+  let query = req.query;
+  fs.readFile(query.category+'.json', (err, data) => {
     let questionsObj = JSON.parse(data);
     res.end(JSON.stringify(questionsObj));
   });

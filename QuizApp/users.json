@@ -1,1 +1,34 @@
-{"users":[{"name":"vibin","password":"vibinjoby","scores":[{"score":20,"score_date":"20/20/20"}]},{"name":"joby","password":"xxxyyy","scores":[{"score":10,"score_date":"20/20/20"}]},{"name":"sds","pwd":"sd","scores":[]},{"name":"albert","pwd":"sdsd","scores":[]}]}
+{
+    "users": [{
+        "first_name": "vibin",
+        "last_name":"joby",
+        "username":"vibinjoby",
+        "password": "vibinjoby",
+        "scores": [{
+            "score": 20,
+            "score_date": "20/20/20"
+        }]
+    }, {
+        "first_name": "lijosh",
+        "last_name":"abraham",
+        "username":"lijosh",
+        "password": "lijosh",
+        "scores": [{
+            "score": 20,
+            "score_date": "20/20/20"
+        }]
+    }, {
+        "first_name": "sds",
+        "last_name":"sds",
+        "username":"sds",
+        "password": "sds",
+        "scores": [{
+            "score": 20,
+            "score_date": "20/20/20"
+        }]
+    }, {
+        "name": "albert",
+        "pwd": "sdsd",
+        "scores": []
+    }]
+}

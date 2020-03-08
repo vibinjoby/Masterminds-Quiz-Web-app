@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="css/login_style.css" />
+  <script src="js/miscellaneous.js"></script>
+
+<body>
+
+  <header id="topBar-first">
+    <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
+    <img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" />
+  </header>
+
+  <div class="wrapper fadeInDown">
+    <section id="formContent">
+
+      <h2 class="active" id="sign_in_btn" onclick="onSigninUpToggle(true)"> Sign In </h2>
+      <h2 class="inactive underlineHover" id="signup_btn" onclick="onSigninUpToggle(false)">Sign Up </h2>
+      <!-- Login Form -->
+      <section id="login_form">
+        <form>
+          <input type="text" id="signin_username" class="fadeIn second" placeholder="Enter Username">
+          <input type="password" id="signin_pwd" class="fadeIn third" placeholder="Enter Password">
+          <input type="button" class="fadeIn fourth" value="Log In" onclick="onSignInClick()">
+        </form>
+      </section>
+
+      <section id="signUp_form" style="display: none;">
+        <form>
+          <input type="text" id="signup" class="fadeIn second" name="signup" placeholder="Enter First Name">
+          <input type="text" id="signup" class="fadeIn second" name="signup" placeholder="Enter Last Name">
+          <input type="text" id="signup" class="fadeIn second" name="signup" placeholder="Enter username">
+          <input type="password" id="signup" class="fadeIn third" name="login" placeholder="Enter password">
+          <input type="password" id="signup" class="fadeIn third" name="login" placeholder="Confirm password">
+          <input type="submit" class="fadeIn fourth" value="Sign Up">
+        </form>
+      </section>
+  </div>
+  </div>
+</body>
+</head>
+
+</html>

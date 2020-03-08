@@ -1,0 +1,180 @@
+
+
+  body {
+    background-color: #f1f1f1;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    margin: 0px;
+  }
+  #topBar-first {
+      height : 57px;
+      background: #0c222c;
+    }
+    .logo {
+      margin-top: 10px;
+      margin-left: 20px;
+      width: 25px;
+      height: 25px;
+    }
+    .name {
+      width: 75px;
+      height: 10px;
+    margin-bottom: 7px;
+      margin-left: 10px;
+    }
+    #app_logo {
+      position: absolute;
+      left: 90px;
+      top: 12px;
+    }
+    #app_name {
+      position: absolute;
+      left: 140px;
+      top: 12px;
+    }
+.pricingTable-title{
+    text-align: center;
+    color: #6e768d;
+    font-size: 3em;
+    font-size: 45px;
+    margin-bottom: 40px;
+    letter-spacing: 0.04em;
+}
+
+  
+
+section{
+  width: 100%;
+  /* height: 180vh; */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 1px 0;
+}
+.card{
+  position: relative;
+  max-width: 300px;
+  height: auto;
+  background: linear-gradient(-45deg,#fe0847,#feae3f);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  -webkit-box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
+          box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
+-webkit-transition: .5s;
+transition: .5s;
+}
+.card:hover{
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.col-sm-4:nth-child(1) .card ,
+.col-sm-4:nth-child(1) .card .title .fa{
+  background: linear-gradient(-45deg,#fff,#fff);
+
+}
+.col-sm-4:nth-child(2) .card,
+.col-sm-4:nth-child(2) .card .title .fa{
+  background: linear-gradient(-45deg,#fff,#fff);
+
+}
+.col-sm-4:nth-child(3) .card,
+.col-sm-4:nth-child(3) .card .title .fa{
+  background: linear-gradient(-45deg,#fff,#fff);
+
+}
+.card::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: rgba(255, 255, 255, .1);
+z-index: 1;
+-webkit-transform: skewY(-5deg) scale(1.5);
+        transform: skewY(-5deg) scale(1.5);
+}
+.title .fa{
+  color:rgb(0, 0, 0);
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  border-radius:  50%;
+  text-align: center;
+  line-height: 100px;
+  -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
+          box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
+
+}
+.title h2 {
+  position: relative;
+  margin: 20px  0 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+  font-size: 28px;
+ z-index: 2;
+}
+.price,.option{
+  position: relative;
+  z-index: 2;
+}
+.price h4 {
+margin: 0;
+padding: 20px 0 ;
+color: rgb(0, 0, 0);
+font-size: 60px;
+}
+
+.option ul {
+  margin: 0;
+  padding: 0;
+
+}
+.option ul li {
+margin: 0 0 10px;
+padding: 0;
+list-style: none;
+color: rgb(0, 0, 0);
+font-size: 16px;
+}
+.card a {
+  position: relative;
+  z-index: 2;
+  background: #f1f1f1;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 40px;
+  display: block;
+  text-align: center;
+  margin: 20px auto 0 ;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+
+}
+.card a:hover{
+    text-decoration: none;
+}
+
+#topBar-second {
+  height: 61px;
+  display: inline-flex;
+  background: #23629F;
+  color: #c6c4c4;
+}
+#top-bar-contents {
+  position: absolute;
+  left: 62%;
+  font-size: 20px;
+  margin-top: 14px;
+}
+
+.verticalLine {
+  border-left: 2px solid white;
+  margin-right: 42px;
+  margin-left: 20px;
+  height: 25px;
+}
