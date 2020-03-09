@@ -4,84 +4,86 @@
 <head>
 	<title>Result</title>
 	<link rel="stylesheet" type="text/css" href="css/scorepage.css" />
+	<link rel="stylesheet" type="text/css" href="css/category_style.css" />
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-	<script type="text/javascript">
-		// Load google charts
-		google.charts.load('current', { 'packages': ['corechart'] });
-		google.charts.setOnLoadCallback(drawChart);
-
-		// Draw the chart and set the chart values
-		function drawChart() {
-			var data = google.visualization.arrayToDataTable([
-				['Task', 'Score'],
-				['Correct Answers', 10],
-				['Wrong Answers', 70],
-				['Unanswered', 20]
-			]);
-
-			// Optional; add a title and set the width and height of the chart
-			var options = { 'title': 'Scoring Chart', 'width': 850, 'height': 450, };
-
-			// Display the chart inside the <div> element with id="piechart"
-			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-			chart.draw(data, options);
-		}
-	</script>
+	<script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+	<script src="js/scorepage.js"></script>
+	<script src="js/miscellaneous.js"></script>
 </head>
 
-<body>
-
+<body onload="initializeUserName()">
+	<section class="wrapper">
 	<header id="topBar-first">
 		<img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
 		<img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" />
+		<label id="user_name">Welcome <span id="username"></span></label>
+      <button id="signout-btn" onclick="onSignOut()">Sign out</button>
 	</header>
 
 	<section id="topBar-second">
-			<section id="top-bar-contents">
-			  <a href="category.html" style="color: white;text-decoration: none;">CATEGORY</a>
-			  <label class="verticalLine"></label>
-			  <a href="highscore.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
-			  <label class="verticalLine"></label>
-			  <a href="prevscore.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
-			</section>
-		  </section>
+		<section id="top-bar-contents">
+			<a href="category.html" style="color: white;text-decoration: none;">CATEGORY</a>
+			<label class="verticalLine"></label>
+			<a href="profile.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
+			<label class="verticalLine"></label>
+			<a href="profile.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
+		</section>
+	</section>
 
 	<p class="headingCentered2">Quiz result</p>
 	<section id="contentHolder">
 		<div id="piechart"></div>
 		<section id="right_content">
-			<h2>Score: 0%</h2>
+			<h2>Score: <span id="score_percent">0%</span></h2>
 			<table>
 				<tr>
 					<td>Correct Answers</td>
 					<td>&ensp;:</td>
-					<td><span id="correct_answer"></span></td>
+					<td><span id="correct_answer">0</span></td>
 				</tr>
 				<tr>
 					<td>Wrong Answers</td>
-					<td>&ensp;:</td><span id="wrong_answer"></span>
+					<td>&ensp;:</td>
+					<td><span id="wrong_answer">0</span></td>
 				</tr>
 				<tr>
 					<td>Unanswered</td>
-					<td>&ensp;:</td><span id="unanswered"></span>
+					<td>&ensp;:</td>
+					<td><span id="unanswered">0</span></td>
 				</tr>
 			</table>
 		</section>
 	</section>
 	<section id="congrats">
-		<p>CONGRATULATIONS</p>
+		<p id="appreciation"></p>
 	</section>
 	<section id="bottom_content">
 		<ul style="border:0px #000000 solid;margin: 0px;padding: 0;"></ul>
-		<p>You have successfully passed the test. You are now certified in Master Minds Aptitude Quiz.</p>
+		<p id="final_content"></p>
 	</section>
 
 
 	<section id="bottom_buttons">
-		<a href="something" class="bottom_buttons">Retake Quiz</a>
-		<a href="something" class="bottom_buttons">Download Certificate</a>
+		<button class="progress-buttons" onclick="onRetakeQuiz()">Retake Quiz</button>
+		<button class="progress-buttons" onclick="downloadCertificate()" id="certificate">Download Certificate</button>
 	</section>
+	</section>
+
+	<!-- The Modal popup-->
+	<div id="myModal" class="modal">
+		<!-- Modal popup content -->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h2>Are You sure you want to navigate to the next question..You have an unanswered question</h2>
+		  </div>
+		  <div class="modal-body">
+			<button id="cancel_btn_popup" class="progress_btns">Cancel</button>
+			<button id="ok_btn_popup" class="progress_btns">OK</button>
+		  </div>
+		</div>
+	
+	  </div>
 </body>
 
 </html>

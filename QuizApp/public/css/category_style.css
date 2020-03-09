@@ -60,25 +60,6 @@ margin-bottom: 7px;
   margin-right: 20px;
 }
 
-/* .grid-container{
-  border-top:2px dotted #f00;
-  height: 300px;
-  width: 1150px;
-  display: inline-table;
-  flex:1 1 auto;
-  font-family: sans-serif;
-  margin-left: 75px;
-  margin-right: 20px; 
-  margin-top: 25px;
-  border-radius: 20px 20px 20px 20px;
-  padding: 20px;
-  order: 2;
-  position:relative;
-  background: #DEDEDE;
-  padding-bottom: 138px;
-} */
-
-
 .title-bar-center {
   color: #333333;
   font: 16px Arial, Georgia, "Times New Roman",Times,serif;

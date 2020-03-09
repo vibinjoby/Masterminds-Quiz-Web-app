@@ -1,0 +1,165 @@
+body{
+  background-color: #F1F5F9;
+  margin: 0;
+} 
+.container {
+  padding-right: 70px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.wrapper{
+  min-height: 100vh;
+  /* background: #ccc; */
+  display: flex;
+  flex-direction: column;
+}
+#topBar-first {
+  height : 57px;
+  background: #414042;
+  ;
+}
+.logo {
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+}
+.name {
+  width: 75px;
+  height: 10px;
+margin-bottom: 7px;
+  margin-left: 10px;
+}
+#app_logo {
+  position: absolute;
+  left: 90px;
+  top: 12px;
+}
+#app_name {
+  position: absolute;
+  left: 140px;
+  top: 12px;
+}
+#user_name {
+  font-size: larger;
+  position: absolute;
+  right: 132px;
+  top: 17px;
+  color:#fff;
+}
+#signout-btn {
+  background: #23629F;
+  color:#fff;
+  border: 0;
+  font-size: small;
+  height: 31px;
+  width: 93px;
+  margin-top: 13px;
+  border-radius: 3px;
+  float: right;
+  margin-right: 20px;
+}
+
+/* Top Section */
+
+#top_box {
+  margin-left: 360px;
+  top: 15%;
+  position: absolute;
+  width: 800px;
+  height: 120px;
+  background-color: #ffffff;
+}
+
+#top_buttons {
+  top: 20%;
+  margin-right: 40px;
+  right: 0;
+position: absolute;
+width: 710px;
+height: 90px;
+}
+
+.rapid_quiz {
+  width: 340px;
+  height: 70px;
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight:bold;
+  font-size: 22px;
+  color: #253840;
+  background-color: #F1F5F9;
+  text-align:center;
+  transition: all 0.2s;
+  }
+
+
+  .real_quiz {
+    width: 340px;
+    height: 70px;
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin-left: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:bold;
+    font-size: 22px;
+    color: #253840;
+    background-color: #F1F5F9;
+    text-align:center;
+    transition: all 0.2s;
+    }
+
+    .line{
+      margin-left: 49px;
+      top: 37px;
+      width: 340px;
+      height: 47px;
+      border-bottom: 10px solid #253840;
+      position: absolute;
+      }
+
+.heading h2 {
+  margin-top: 150px;
+  text-align: center;
+  color: #253840;
+}
+
+/* Table */
+#score_table {
+  margin-top: 20px;
+}
+
+table 			      { 
+  border-spacing: 1; 
+  border-collapse: collapse; 
+  background:white;
+  border-radius:6px;
+  overflow:hidden;
+  max-width:800px; 
+  width:100%;
+  margin:0 auto;
+  position:relative;
+}
+thead tr        { 
+  color: #fff;
+  height:60px;
+  background:#253840;
+  font-size:16px;
+}
+tbody tr        { height:48px; border-bottom:1px solid rgb(247, 255, 239) ;
+}
+
+
+td,th 					{ text-align:center; border:1px solid rgb(238, 253, 223)
+}
+  
+  

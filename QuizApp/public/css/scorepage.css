@@ -1,38 +1,4 @@
-html {
-    background-color: #ffffff;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    height: 100vh;
-    margin: 0px;
-  }
-  #topBar-first {
-      height : 57px;
-      background: #414042;
-    }
-    .logo {
-      margin-top: 10px;
-      margin-left: 20px;
-      width: 25px;
-      height: 25px;
-    }
-    .name {
-      width: 75px;
-      height: 10px;
-    margin-bottom: 7px;
-      margin-left: 10px;
-    }
-    #app_logo {
-      position: absolute;
-      left: 90px;
-      top: 12px;
-    }
-    #app_name {
-      position: absolute;
-      left: 140px;
-      top: 12px;
-    }
+
  
     .headingCentered2 {
         margin-top: 14px;
@@ -59,12 +25,19 @@ html {
        font-size: 25px;
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    }
+   button:disabled,
+    button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+  }
   
 
    #bottom_content {
        top: 60%;
        margin-right: 50px;
        right: 0;
+       padding-left: 20px;
     position: absolute;
     width: 610px;
     height: 90px;
@@ -115,35 +88,20 @@ html {
     text-align:center;
     transition: all 0.2s;
     }
-    .bottom_buttons:hover{
-    background-color:#4095c6;
-    }
     @media all and (max-width:30em){
          .bottom_buttons{
         display:block;
         margin:0.2em auto;
         }
         }
-
-        #topBar-second {
-          height: 61px;
-          display: inline-flex;
+        .progress-buttons {
           background: #23629F;
-          color: #c6c4c4;
-        }
-        #top-bar-contents {
-          position: absolute;
-          right: 0;
-          font-size: larger;
-          margin-top: 21px;
-          float: right;
-        }
-        
-        .verticalLine {
-          border-left: 2px solid white;
-          margin-right: 42px;
-          margin-left: 20px;
-          height: 20px;
+          color:#fff;
+          border: 0;
+          font-size: small;
+          height: 47px;
+          min-width: 120px;
+          border-radius: 3px;
         }
 
 

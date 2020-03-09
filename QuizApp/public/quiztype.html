@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Choose Quiz Type</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="js/miscellaneous.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/quiz_type.css" />
+  <link rel="stylesheet" type="text/css" href="css/category_style.css" />
+</head>
+
+<body onload="initializeUserName()">
+  <section class="wrapper">
+    <header id="topBar-first">
+      <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
+      <img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" />
+      <label id="user_name">Welcome <span id="username"></span></label>
+      <button id="signout-btn" onclick="onSignOut()">Sign out</button>
+    </header>
+    <section id="topBar-second">
+      <section id="top-bar-contents">
+        <a href="category.html" style="color: white;text-decoration: none;">CATEGORY</a>
+        <label class="verticalLine"></label>
+        <a href="profile.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
+        <label class="verticalLine"></label>
+        <a href="profile.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
+      </section>
+    </section>
+    <h2 class="pricingTable-title">What type of quiz do you want to play?</h2>
+
+    <section>
+      <section class="container-fluid">
+        <section class="container">
+          <section class="row">
+            <section class="col-sm-4">
+              <section class="card text-center">
+                <section class="title">
+                  <i class="fa fa-paper-plane" aria-hidden="true"></i>
+
+                </section>
+                <section class="price">
+                  <img class="type_logo" src="assets/practice.png" alt="app_logo" height="100" width="100" />
+                  <!-- <h4><sup>$</sup>25</h4> -->
+                </section>
+                <section class="option">
+                  <ul>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i>Even the all-powerful Pointing has
+                      no control about the blind texts it is an almost unorthographic. Even the all-powerful Pointing
+                      has no control about the blind texts it is an almost unorthographic. </li>
+
+                  </ul>
+                </section>
+                <a onclick="onQuizTypeSelection('practice')">Practice Quiz</a>
+              </section>
+            </section>
+            <!-- END Col one -->
+            <section class="col-sm-4">
+              <section class="card text-center">
+                <section class="title">
+                  <i class="fa fa-plane" aria-hidden="true"></i>
+                  <!-- <h2>Standard</h2> -->
+                </section>
+                <section class="price">
+                  <img class="type_logo" src="assets/rapid.png" alt="app_logo" height="100" width="100" />
+                  <!-- <h4><sup>$</sup>50</h4> -->
+                </section>
+                <section class="option">
+                  <ul>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i>Even the all-powerful Pointing has
+                      no control about the blind texts it is an almost unorthographic. Even the all-powerful Pointing
+                      has no control about the blind texts it is an almost unorthographic. </li>
+                  </ul>
+                </section>
+                <a onclick="onQuizTypeSelection('rapid')">Rapid Quiz</a>
+              </section>
+            </section>
+            <!-- END Col two -->
+            <section class="col-sm-4">
+              <section class="card text-center">
+                <section class="title">
+                  <i class="fa fa-rocket" aria-hidden="true"></i>
+                  <!-- <h2>Premium</h2> -->
+                </section>
+                <section class="price">
+                  <img class="type_logo" src="assets/real.png" alt="app_logo" height="100" width="100" />
+                  <!-- <h4><sup>$</sup>100</h4> -->
+                </section>
+                <section class="option">
+                  <ul>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i>Even the all-powerful Pointing has
+                      no control about the blind texts it is an almost unorthographic. Even the all-powerful Pointing
+                      has no control about the blind texts it is an almost unorthographic. </li>
+                  </ul>
+                </section>
+                <a onclick="onQuizTypeSelection('real')">Real Quiz</a>
+              </section>
+            </section>
+            <!-- END Col three -->
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <!-- The Modal popup-->
+  <div id="myModal" class="modal">
+    <!-- Modal popup content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Are You sure you want to navigate to the next question..You have an unanswered question</h2>
+      </div>
+      <div class="modal-body">
+        <button id="cancel_btn_popup" class="progress_btns">Cancel</button>
+        <button id="ok_btn_popup" class="progress_btns">OK</button>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

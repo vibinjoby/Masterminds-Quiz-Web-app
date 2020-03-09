@@ -7,21 +7,21 @@
   <script src="js/miscellaneous.js"></script>
 </head>
 
-<body>
+<body onload="initializeUserName()">
   <section class="wrapper">
     <header id="topBar-first">
       <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
       <img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" />
-      <label id="user_name">Welcome Lijosh</label>
+      <label id="user_name">Welcome <span id="username"></span></label>
       <button id="signout-btn" onclick="onSignOut()">Sign out</button>
     </header>
     <section id="topBar-second">
       <section id="top-bar-contents">
         <a href="category.html" style="color: white;text-decoration: none;">CATEGORY</a>
         <label class="verticalLine"></label>
-        <a href="highscore.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
+        <a href="profile.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
         <label class="verticalLine"></label>
-        <a href="prevscore.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
+        <a href="profile.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
       </section>
     </section>
     <section class="container">

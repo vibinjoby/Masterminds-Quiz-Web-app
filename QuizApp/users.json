@@ -27,8 +27,13 @@
             "score_date": "20/20/20"
         }]
     }, {
-        "name": "albert",
-        "pwd": "sdsd",
-        "scores": []
+        "first_name": "albert",
+        "last_name":"danison",
+        "username":"albert",
+        "password": "albert",
+        "scores": [{
+            "score": 20,
+            "score_date": "20/20/20"
+        }]
     }]
 }

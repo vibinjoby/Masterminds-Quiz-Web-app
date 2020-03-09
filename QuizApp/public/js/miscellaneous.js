@@ -25,6 +25,7 @@ function onSignInClick() {
             if (status === 0 || (200 >= status && status < 400)) {
                 if(xhr.responseText) {
                     var userObj = JSON.parse(xhr.responseText);
+                    sessionStorage.setItem('userObj', JSON.stringify(userObj));
                     window.location.href="category.html";
                 } else {
                     console.log('incorrect user id and password');
@@ -42,6 +43,8 @@ function onSignOut() {
     document.getElementsByClassName('modal-header')[0].innerHTML = 'Are You sure you want to sign out??';
 
     document.getElementById('ok_btn_popup').onclick = function () {
+        //clear the session storage
+        sessionStorage.clear();
         window.location.href = 'index.html';
     }
     // When the user clicks on cancel btn, close the modal
@@ -51,11 +54,16 @@ function onSignOut() {
 }
 
 function onCategorySelection(categoryName) {
-    window.location.href = 'quiz_type.html?category='+categoryName;
+    window.location.href = 'quiztype.html?category='+categoryName;
 }
 
 function onQuizTypeSelection (quizType) {
     const urlParams = new URLSearchParams(window.location.search);
     var category = urlParams.get('category');
     window.location.href = 'instructions.html?quiztype='+quizType+'&category='+category;
+}
+
+function initializeUserName() {
+    var userObj = JSON.parse(sessionStorage.getItem('userObj'));
+    document.getElementById('username').innerHTML = userObj.username.toUpperCase();
 }

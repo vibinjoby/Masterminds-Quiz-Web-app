@@ -11,6 +11,9 @@ var timerInterval;
 var urlParams = new URLSearchParams(window.location.search);
 var quiz_type = urlParams.get('quiztype');
 var category = urlParams.get('category');
+if (!quiz_type || !category) {
+    window.location.href = 'category.html';
+}
 if (quiz_type == 'real') {
     isRealQuiz = true;
 } else if (quiz_type == 'practice') {
@@ -62,20 +65,22 @@ function startTimer(duration) {
 
 function loadQuestions() {
     var xhr = new XMLHttpRequest();
-    var url = "http://localhost:8000/fetchQuestions?category="+category;
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            var status = xhr.status;
-            if (status === 0 || (200 >= status && status < 400)) {
-                questionObj = JSON.parse(xhr.responseText);
-                initializeDummyValues();
-                updateQuestions();
+    if (category) {
+        var url = "http://localhost:8000/fetchQuestions?category=" + category;
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                var status = xhr.status;
+                if (status === 0 || (200 >= status && status < 400)) {
+                    questionObj = JSON.parse(xhr.responseText);
+                    initializeDummyValues();
+                    updateQuestions();
+                }
             }
-        }
-    };
-    xhr.open("GET", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send("");
+        };
+        xhr.open("GET", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send("");
+    }
 }
 
 function onNextClick() {
@@ -361,5 +366,27 @@ function onExitTest() {
     // When the user clicks on cancel btn, close the modal
     document.getElementById('cancel_btn_popup').onclick = function () {
         document.getElementById("myModal").style.display = "none";
+    }
+}
+
+function onSubmitQuiz() {
+    var scoreDetails = { "unanswered": 0, "correct_answer": 0, "wrong_answer": 0 };
+    if (typeof (Storage) !== "undefined") {
+        for (i = 1; i <= 10; i++) {
+            if (!questionObj[i].selectedAnswer) {
+                // unanswered
+                scoreDetails.unanswered += 1;
+            } else if (questionObj[i].selectedAnswer == questionObj[i].correct_answer) {
+                // correct answer
+                scoreDetails.correct_answer += 1;
+            } else {
+                // wrong answer
+                scoreDetails.wrong_answer += 1;
+            }
+        }
+        scoreDetails.category = category;
+        scoreDetails.quiz_type = quiz_type;
+        sessionStorage.setItem('userScore', JSON.stringify(scoreDetails));
+        window.location.href = 'scorepage.html';
     }
 }
