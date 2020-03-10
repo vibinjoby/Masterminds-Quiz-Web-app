@@ -1,39 +1,107 @@
 {
-    "users": [{
-        "first_name": "vibin",
-        "last_name":"joby",
-        "username":"vibinjoby",
-        "password": "vibinjoby",
-        "scores": [{
-            "score": 20,
-            "score_date": "20/20/20"
-        }]
-    }, {
-        "first_name": "lijosh",
-        "last_name":"abraham",
-        "username":"lijosh",
-        "password": "lijosh",
-        "scores": [{
-            "score": 20,
-            "score_date": "20/20/20"
-        }]
-    }, {
-        "first_name": "sds",
-        "last_name":"sds",
-        "username":"sds",
-        "password": "sds",
-        "scores": [{
-            "score": 20,
-            "score_date": "20/20/20"
-        }]
-    }, {
-        "first_name": "albert",
-        "last_name":"danison",
-        "username":"albert",
-        "password": "albert",
-        "scores": [{
-            "score": 20,
-            "score_date": "20/20/20"
-        }]
-    }]
+	"users": [{
+		"first_name": "vibin",
+		"last_name": "joby",
+		"username": "vibinjoby",
+		"password": "vibinjoby",
+		"scores": [{
+			"score": "1",
+			"quiztype": "practice",
+			"scoreDate": "2020-03-09T15:27:09.155Z"
+		}, {
+			"score": "0",
+			"quiztype": "real",
+			"scoreDate": "2020-03-09T17:41:36.111Z"
+		}, {
+			"score": "0",
+			"quiztype": "real",
+			"scoreDate": "2020-03-09T17:41:41.323Z"
+		}, {
+			"score": "0",
+			"quiztype": "real",
+			"scoreDate": "2020-03-09T17:41:48.066Z"
+		}, {
+			"score": "1",
+			"quiztype": "practice",
+			"scoreDate": "2020-03-09T17:44:45.168Z"
+		}, {
+			"score": "0",
+			"quiztype": "practice",
+			"scoreDate": "2020-03-09T18:30:08.345Z"
+		}, {
+			"score": "0",
+			"quiztype": "practice",
+			"scoreDate": "2020-03-09T18:33:05.560Z"
+		}, {
+			"score": "0",
+			"quiztype": "real",
+			"scoreDate": "2020-03-09T21:06:40.925Z"
+		}, {
+			"score": "0",
+			"quiztype": "rapid",
+			"scoreDate": "2020-03-09T21:44:39.559Z"
+		}, {
+			"score": "10",
+			"quiztype": "rapid",
+			"scoreDate": "2020-03-10T00:13:03.144Z"
+		}, {
+			"score": "0",
+			"quiztype": "rapid",
+			"scoreDate": "1022020"
+		}]
+	}, {
+		"first_name": "lijosh",
+		"last_name": "abraham",
+		"username": "lijosh",
+		"password": "lijosh",
+		"scores": [{
+			"score": "10",
+			"quiztype": "rapid",
+			"scoreDate": "2020-03-10T00:13:03.144Z"
+		}]
+	}, {
+		"first_name": "sds",
+		"last_name": "sds",
+		"username": "sds",
+		"password": "sds",
+		"scores": [{
+			"score": "1",
+			"quiztype": "rapid",
+			"scoreDate": "2020-03-10T00:13:03.144Z"
+		}, {
+			"score": "0",
+			"quiztype": "rapid",
+			"scoreDate": "1022020"
+		}]
+	}, {
+		"first_name": "albert",
+		"last_name": "danison",
+		"username": "albert",
+		"password": "albert",
+		"scores": [{
+			"score": "10",
+			"quiztype": "rapid",
+			"scoreDate": "2020-03-10T00:13:03.144Z"
+		}, {
+			"score": "3",
+			"quiztype": "real",
+			"scoreDate": "2020-03-10T04:10:07.773Z"
+		}, {
+			"score": "2",
+			"quiztype": "real",
+			"scoreDate": "2020-03-10T04:11:32.957Z"
+		}, {
+			"score": "0",
+			"quiztype": "rapid",
+			"scoreDate": "1022020"
+		}, {
+			"score": "1",
+			"quiztype": "real",
+			"scoreDate": "1022020"
+		}, {
+			"score": "0",
+			"quiztype": "real",
+			"scoreDate": "1022020"
+		}]
+	}]
 }

@@ -1,11 +1,16 @@
 // Load google charts
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
-var scoreDetails = JSON.parse(sessionStorage.getItem('userScore'));
+
 var userObj = JSON.parse(sessionStorage.getItem('userObj'));
+
+if(!userObj) {
+    window.location.href = 'index.html';
+}
 
 // Draw the chart and set the chart values
 function drawChart() {
+    var scoreDetails = JSON.parse(sessionStorage.getItem('userScore'));
     var data = google.visualization.arrayToDataTable([
         ['Task', 'Score'],
         ['Correct Answers', scoreDetails.correct_answer],
@@ -29,7 +34,7 @@ function drawChart() {
     } else {
         document.getElementById('appreciation').innerHTML = 'FAILED';
         document.getElementById('final_content').innerHTML = 'Unfortunately you did not clear the test try again to score more than 80% to clear the test';
-        //document.getElementById('certificate').disabled = true;
+        document.getElementById('certificate').disabled = true;
     }
 
     // Optional; add a title and set the width and height of the chart
@@ -113,5 +118,6 @@ async function downloadCertificate() {
 }
 
 function onRetakeQuiz () {
+    var scoreDetails = JSON.parse(sessionStorage.getItem('userScore'));
     window.location.href = 'quizpage.html?quiztype='+scoreDetails.quiz_type+'&category='+scoreDetails.category;
 }

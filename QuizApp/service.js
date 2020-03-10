@@ -7,9 +7,9 @@ app.use('/', express.static('public'));
 
 //Service to add the new user to the json file
 //input needed is the username and password 
-app.post('/saveLogin', (req, res) => { 
+app.post('/saveLogin', (req, res) => {
   fs.readFile('users.json', (err, data) => {
-    if (err){
+    if (err) {
       fs.writeFileSync('users.json', "");
     } else {
       let usersObj = JSON.parse(data);
@@ -20,21 +20,84 @@ app.post('/saveLogin', (req, res) => {
       let usersStr = JSON.stringify(usersObj);
       fs.writeFileSync('users.json', usersStr);
     }
+  });
 });
+
+app.get('/fetchUserScoreDetails', (req, res) => {
+  fs.readFile('users.json', (err, data) => {
+    var scoreDetails = {};
+    if (err) {
+      fs.writeFileSync('users.json', "");
+    } else {
+      let usersObj = JSON.parse(data);
+      let username = req.query.username;
+      console.log(username);
+      for (var key in usersObj.users) {
+        if (JSON.stringify(usersObj.users[key].username) === JSON.stringify(username)) {
+          scoreDetails = usersObj.users[key].scores;
+        }
+      }
+      res.end(JSON.stringify(scoreDetails));
+    }
+  });
+});
+
+//Fetches all score details for both rapid and real
+app.get('/fetchOverallScoreDetails', (req, res) => {
+  fs.readFile('users.json', (err, data) => {
+    var overallScoreDetails = {};
+    var rapidUsersScore = [];
+    var realUsersScore = [];
+    if (err) {
+      fs.writeFileSync('users.json', "");
+    } else {
+      let usersObj = JSON.parse(data);
+      for (var key in usersObj.users) {
+        if(usersObj.users[key].scores){
+          for(i=0;i<usersObj.users[key].scores.length;i++) {
+            if(usersObj.users[key].scores[i].quiztype == 'rapid') {
+              var userDetails = {};
+              userDetails.username = usersObj.users[key].username;
+              userDetails.score = usersObj.users[key].scores[i].score;
+              rapidUsersScore.push(userDetails);
+            } else if(usersObj.users[key].scores[i].quiztype == 'real') {
+              var userDetails = {};
+              userDetails.username = usersObj.users[key].username;
+              userDetails.score = usersObj.users[key].scores[i].score;
+              realUsersScore.push(userDetails);
+            }
+          }
+        }
+      }
+      overallScoreDetails.rapidUsersScore = rapidUsersScore;
+      overallScoreDetails.realUsersScore = realUsersScore;
+      console.log(JSON.stringify(overallScoreDetails));
+      res.end(JSON.stringify(overallScoreDetails));
+    }
+  });
 });
 
 //Service to save the score with date in the json file
 //input needed name and the score details
-app.post('/saveScore', (req, res) => { 
+app.post('/saveScore', (req, res) => {
+  var isSaved = false;
   fs.readFile('users.json', (err, data) => {
     if (err) throw err;
-    let scoreDetails = req.query;
+    var scoreObj = {};
+    let requestObj = req.query;
     let usersObj = JSON.parse(data);
+    scoreObj.score = requestObj.score;
+    scoreObj.quiztype = requestObj.quiz_type;
+    scoreObj.scoreDate = new Date().getDate() + ''+ new Date().getMonth() + '' + new Date().getFullYear();
+    console.log(scoreObj);
     for (var key in usersObj.users) {
-      if(JSON.stringify(usersObj.users[key].name)===JSON.stringify(scoreDetails.name)){
-        usersObj.users[key].score.push(scoreDetails.score);
+      if (JSON.stringify(usersObj.users[key].username) === JSON.stringify(requestObj.username)) {
+        console.log('am updating the score');
+        isSaved = true;
+        usersObj.users[key].scores.push(scoreObj);
       }
     }
+    res.end('output is ' + isSaved);
     let usersStr = JSON.stringify(usersObj);
     fs.writeFileSync('users.json', usersStr);
   });
@@ -42,7 +105,7 @@ app.post('/saveScore', (req, res) => {
 
 //Service to check if the user already exists and if so return the JSON data of the user
 // input needed is name
-app.get('/checkUserExists', (req, res) => { 
+app.get('/checkUserExists', (req, res) => {
   fs.readFile('users.json', (err, data) => {
     var foundUserObj = null;
     let userNameObj = req.query;
@@ -50,12 +113,12 @@ app.get('/checkUserExists', (req, res) => {
     let usersObj = JSON.parse(data);
     // check user exists
     for (var key in usersObj.users) {
-      if(JSON.stringify(usersObj.users[key].username)===JSON.stringify(userNameObj.username)
-      && JSON.stringify(usersObj.users[key].password)===JSON.stringify(userNameObj.password)){
+      if (JSON.stringify(usersObj.users[key].username) === JSON.stringify(userNameObj.username)
+        && JSON.stringify(usersObj.users[key].password) === JSON.stringify(userNameObj.password)) {
         foundUserObj = usersObj.users[key];
       }
     }
-    if(foundUserObj == null) {
+    if (foundUserObj == null) {
       res.end(null);
     } else {
       res.end(JSON.stringify(foundUserObj));
@@ -64,11 +127,10 @@ app.get('/checkUserExists', (req, res) => {
 });
 app.listen(8000);
 
-app.get('/fetchQuestions',(req,res) => {
+app.get('/fetchQuestions', (req, res) => {
   let query = req.query;
-  fs.readFile(query.category+'.json', (err, data) => {
+  fs.readFile(query.category + '.json', (err, data) => {
     let questionsObj = JSON.parse(data);
     res.end(JSON.stringify(questionsObj));
   });
 });
-  

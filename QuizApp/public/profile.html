@@ -8,7 +8,7 @@
   <script src="js/miscellaneous.js"></script>
 </head>
 
-<body onload="initializeUserName()">
+<body onload="onFetchUserScoreDetails()">
   <section class="wrapper">
     <header id="topBar-first">
       <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
@@ -19,69 +19,40 @@
 
     <section id="topBar-second">
       <section id="top-bar-contents">
-        <a href="category.html" style="color: white;text-decoration: none;">CATEGORY</a>
+        <a href="quiztype.html" style="color: white;text-decoration: none;">QUIZ OPTIONS</a>
         <label class="verticalLine"></label>
-        <a href="profile.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
+        <a id="highScoreLink" href="profile.html?profilepage=highscore" style="color: white;text-decoration: none;" onclick="onHighScoreSelection()">HIGH SCORE</a>
         <label class="verticalLine"></label>
-        <a href="profile.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
+        <a id="myScoreLink" href="profile.html?profilepage=myscore" style="color: white;text-decoration: none;margin-right: 39px;" onclick="onMyScoreSelection()">MY
+          SCORE</a>
       </section>
     </section>
 
     <!-- Top Section -->
     <section id="top_box">
       <section id="top_buttons">
-        <a href="#" class="rapid_quiz">RAPID QUIZ</a>
-        <a href="#" class="real_quiz">REAL QUIZ</a>
+        <a href="#" id="rapid_quiz" class="active-quiz-type" onclick="getRapidQuizScore()">RAPID QUIZ</a>
+        <a href="#" id="real_quiz" onclick="getRealQuizScore()">REAL QUIZ</a>
       </section>
-      <section class="line"></section>
     </section>
 
     <section class="heading">
       <h2>CURRENT SCORE STANDINGS</h2>
     </section>
 
-
-    <section id="score_table">
-
-      <table>
-        <thead>
-          <tr>
-            <th>RANK</th>
-            <th>NAME</th>
-            <th>SCORE</th>
-          </tr>
-          <thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>LIJOSH ABRAHAM</td>
-              <td>8/10</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>LIJOSH ABRAHAM</td>
-              <td>8/10</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>LIJOSH ABRAHAM</td>
-              <td>8/10</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>LIJOSH ABRAHAM</td>
-              <td>8/10</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>LIJOSH ABRAHAM</td>
-              <td>8/10</td>
-            </tr>
-          </tbody>
-        </thead>
-
+    <section class="score_table" id="overall-score">
+        <table id="overall-rapid-score-table">
+          </table>
+          <table id="overall-real-score-table">
+          </table>
     </section>
 
+    <section class="score_table" id="user-score">
+      <table id="user-rapid-score-table">
+      </table>
+      <table id="user-real-score-table">
+      </table>
+    </section>
   </section>
 
   <!-- The Modal popup-->

@@ -83,6 +83,37 @@ function loadQuestions() {
     }
 }
 
+function saveScore(scoreDetails) {
+    var xhr = new XMLHttpRequest();
+    var scoreObj = {};
+    var userObj = JSON.parse(sessionStorage.getItem('userObj'));
+    //dont save score for practice
+    if (userObj) {
+        if (category && userObj && quiz_type != 'practice') {
+            //set all the needed params for service call to save the score
+            scoreObj.score = scoreDetails.correct_answer;
+            scoreObj.quiz_type = quiz_type;
+            scoreObj.username = userObj.username;
+            console.log(JSON.stringify(scoreObj));
+            var url = "http://localhost:8000/saveScore?score=" + scoreObj.score + '&quiz_type=' + scoreObj.quiz_type + '&username=' + scoreObj.username;
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    var status = xhr.status;
+                    if (status === 0 || (200 >= status && status < 400)) {
+                        console.log(new Date());
+                    }
+                }
+            };
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send("");
+        }
+    } else {
+        window.location.href = 'index.html';
+    }
+}
+
 function onNextClick() {
     if (isRapidQuiz) {
         // Get the modal
@@ -387,6 +418,7 @@ function onSubmitQuiz() {
         scoreDetails.category = category;
         scoreDetails.quiz_type = quiz_type;
         sessionStorage.setItem('userScore', JSON.stringify(scoreDetails));
-        window.location.href = 'scorepage.html';
+        saveScore(scoreDetails);
+        window.location.href = 'scorepage.html?category='+category+'&quiztype='+quiz_type;
     }
 }

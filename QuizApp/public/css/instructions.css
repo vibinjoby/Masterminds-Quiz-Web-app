@@ -1,111 +1,156 @@
 body{
-    background-color: #ffffff;
-    margin: 0;
-  } 
-  .container {
-      margin-top: 80px;
-    padding-right: 70px;
-      padding-left: 10px;
-      margin-right: auto;
-      margin-left: auto;
-  }
-  .wrapper{
-    min-height: 100vh;
-    /* background: #ccc; */
-    display: flex;
-    flex-direction: column;
-  }
-  #topBar-first {
-    height : 57px;
-    background: #414042;
-  }
-  .logo {
-    margin-top: 10px;
-    margin-left: 20px;
-    width: 25px;
-    height: 25px;
-  }
-  .name {
-    width: 75px;
-    height: 10px;
-  margin-bottom: 7px;
-    margin-left: 10px;
-  }
-  #app_logo {
-    position: absolute;
-    left: 90px;
-    top: 12px;
-  }
-  #app_name {
-    position: absolute;
-    left: 140px;
-    top: 12px;
-  }
-
-  #user_name {
-    font-size: larger;
-    position: absolute;
-    right: 132px;
-    top: 17px;
-    color:#fff;
-  }
-  #signout-btn {
-    background: #23629F;
-    color:#fff;
-    border: 0;
-    font-size: small;
-    height: 31px;
-    width: 93px;
-    margin-top: 13px;
-    border-radius: 3px;
-    float: right;
-    margin-right: 20px;
-  }
-
-.note11 {
-    background: #efefef;
-    height: 20px;
-    font-size: 16px;
-    padding: 5px 0px;
-    padding-left: 8px;
-    font-weight: bold;
+  background-color: #ffffff;
+  margin: 0;
+} 
+#quiz_type{
+  left: 14.2%;
+  position: absolute;
+  top: 25%;;
+  background-color: #23629F;
+  width: 140px;
+  height: 40px;
 }
-
-.start {
-  border-radius: 5px;
-    background: #05acd6;
-    height: 37px;
-    color: #FFF !important;
-    text-align: center;
-    width: 158px;
-    -moz-margin-top: 6px;
-    margin-top: 18px;
-    font-size: 12px;
-    font-family: 'OpenSansRegular';
-    border: none;
-    font-weight: bold;
-    padding-top: 0px;
-    cursor: pointer;
+#quiz_type label{
+  padding: 7px 7px;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  color: #fff;
 }
 .container {
-  width: 750px;
-  height: 450px;
-  border-style: ridge;
+    margin-top: 65px;
+    padding-right: 70px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1099px;
+    height: 350px;
+    border-width: 3px;
+    border-color: #23629F;
+    border-style: solid;
 }
-.note_section {
-  margin-top: 25px;
+.note_box {
+  right: 11%;
+    position: absolute;
+    top: 37%;
+    width: 500px;
+    height: 250px;
+    border-width: 1px;
+    border-color: #23629F;
+    border-style: solid;
 }
-.ins {
-  margin-left: 15px;
-  margin-top: 5px;
-  font-size: 18px;
-  color: green;
+.note {
+  background: #cecece;
+  height: 20px;
+  font-size: 16px;
+  padding: 5px 0px;
+  padding-left: 8px;
+  font-weight: bold;
 }
-.on_test {
-  font-size: 30px;
-  color: #23629F;
-  font-weight: bolder;
+.note label {
+font-size: 22px;
+color: rgb(23, 79, 134);
 }
-#quesbox {
-  margin-top: 15px;
+.instruction_box label {
+left: 18%;
+position: absolute;
+top: 38%;
+font-size: 25px;
+color: rgb(23, 79, 134);
 }
+.instructions {
+top: 43%;
+left: 19%;
+position: absolute;
+}
+.instructions p{
+font-weight: bold;
+font-size: x-large;
+font-family: serif;
+}
+.note_ins {
+top: 20%;
+left: 12%;
+position: absolute;
+}
+.note_ins p{
+font-weight: bold;
+font-size: larger;
+font-family: serif;
+}
+
+.wrapper{
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+}
+.name {
+  width: 75px;
+  height: 10px;
+margin-bottom: 7px;
+  margin-left: 10px;
+}
+#app_logo {
+  position: absolute;
+  left: 90px;
+  top: 12px;
+}
+#app_name {
+  position: absolute;
+  left: 140px;
+  top: 12px;
+}
+
+#user_name {
+  font-size: larger;
+  position: absolute;
+  right: 132px;
+  top: 17px;
+  color:#fff;
+}
+#signout-btn {
+  background: #23629F;
+  color:#fff;
+  border: 0;
+  font-size: small;
+  height: 31px;
+  width: 93px;
+  margin-top: 1px;
+  border-radius: 3px;
+  float: right;
+  margin-right: 20px;
+}
+
+
+#start_quiz_button {
+  top: 77%;
+  left: 76%;
+  position: absolute;
+  width: 610px;
+  height: 90px;
+}
+
+.btn_start {
+  width: 150px;
+  height: 35px;
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:.5em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-size: larger;
+  color:#FFFFFF;
+  background-color:#23629F;
+  text-align:center;
+  transition: all 0.2s;
+  }

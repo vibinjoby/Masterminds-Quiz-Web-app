@@ -10,7 +10,7 @@
 		var quiztype = urlParams.get('quiztype');
 		var category = urlParams.get('category');
 		function navigateToQuizPage() {
-			window.location.href = "quizpage.html?quiztype="+quiztype+'&category='+category;
+			window.location.href = "quizpage.html?quiztype=" + quiztype + '&category=' + category;
 		}
 	</script>
 </head>
@@ -21,151 +21,106 @@
 			<img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
 			<img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" />
 			<label id="user_name">Welcome <span id="username"></span></label>
-      <button id="signout-btn" onclick="onSignOut()">Sign out</button>
+			<button id="signout-btn" onclick="onSignOut()">Sign out</button>
 		</header>
 
 		<section id="topBar-second">
 			<section id="top-bar-contents">
-			  <a href="category.html" style="color: white;text-decoration: none;">CATEGORY</a>
-			  <label class="verticalLine"></label>
-			  <a href="profile.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
-			  <label class="verticalLine"></label>
-			  <a href="profile.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
+				<a href="category.html" style="color: white;text-decoration: none;">QUIZ OPTIONS</a>
+				<label class="verticalLine"></label>
+				<a href="profile.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
+				<label class="verticalLine"></label>
+				<a href="profile.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
 			</section>
-		  </section>
+		</section>
 
-		<!-- Content section including border -->
+		<section id="quiz_type">
+			<label>Practice Quiz</label>
+		</section>
 		<section class="container">
-			<ul style="border:0px #000000 solid;margin: 0px;padding: 0;">
+			
+			<!-- PRACTICE QUIZ -->
 
-				<!-- PRACTICE QUIZ -->
-				<section id="practice_section">
-					<section id="beg">
-						<section class="on_test">Practice Quiz</section>
+			<section id="practice_section">
+				<section class="instruction_box">
+					<label>Instructions:</label>
+					<section class="instructions">
+						<p>Total number of questions : 10</p>
+						<p>Time allotted : 10 minutes.</p>
+						<p>Each question carry 1 mark, no negative marks.</p>
 					</section>
+				</section>
+				<section class="note_box">
+					<section class="note">
+						<label>Note:</label>
+						<section class="note_ins">
+							<p>Click the "submit quiz" button given in the top right of the quiz page to submit your
+								answer</p>
+							<p>Test will be submitted automatically if the time expired.</p>
+							<p>Don't refresh the page.</p>
+						</section>
+					</section>
+				</section>
 
-					<section id="rndbox">
-						<section id="quesbox">
-							<span style="font-weight:bold;font-size:20px;">Instructions:</span><br>
-							<section class="ins">Total Number of Questions: 10</section>
-							<section class="ins">Time alloted: 10 minutes</section>
-							<section class="ins">Each question carry 1 mark each, no negative marking</section>
-							<section style="height: 220px; border:#efefef 1px solid;margin-top:20px;">
-								<section class="note11">NOTE:</section>
-								<section class="note_section" style="padding:5px">
-									<section style="font-size:17px;" id="note_id">&diams; Click the 'Submit Test' button
-										given in
-										the bottom of this page to Submit your answers.</section>
-									<br>
-									<section style="font-size:17px;" id="note_id">&diams; Test will be submitted after
-										time
-										is
-										Expired.</section>
-									<br>
-									<section style="font-size:17px;" id="note_id">&diams; Do not refresh the Page.
-									</section>
-								</section>
+				<!-- RAPID QUIZ -->
+
+				<!-- <section id="rapid_section">
+					<section class="instruction_box">
+						<label>Instructions:</label>
+						<section class="instructions">
+							<p>Total number of questions : 10</p>
+							<p>Time allotted : 10 minutes.</p>
+							<p>Each question carry 1 mark, no negative marks.</p>
+						</section>
+					</section>
+					<section class="note_box">
+						<section class="note">
+							<label>Note:</label>
+							<section class="note_ins">
+								<p>Click the "submit quiz" button given in the top right of the quiz page to submit your
+									answer</p>
+								<p>Test will be submitted automatically if the time expired.</p>
+								<p>Don't refresh the page.</p>
 							</section>
 						</section>
-						<section style="text-align:center;float:right">
-							<button class="start" id="starttest" onclick="navigateToQuizPage()">Submit</button>
+					</section> -->
+
+
+					<!-- REAL QUIZ -->
+
+					<!-- <section id="real_section">
+						<section class="instruction_box">
+							<label>Instructions:</label>
+							<section class="instructions">
+								<p>Total number of questions : 10</p>
+								<p>Time allotted : 10 minutes.</p>
+								<p>Each question carry 1 mark, no negative marks.</p>
+							</section>
 						</section>
-					</section>
-				</section>
-			</ul>
-			</li>
-			</ul>
+						<section class="note_box">
+							<section class="note">
+								<label>Note:</label>
+								<section class="note_ins">
+									<p>Click the "submit quiz" button given in the top right of the quiz page to submit your
+										answer</p>
+									<p>Test will be submitted automatically if the time expired.</p>
+									<p>Don't refresh the page.</p>
+								</section>
+							</section>
+						</section> -->
 
-		</section>
-	</section>
-	</section>
 
-	<!-- Rapid QUIZ -->
-
-	<section id="rapid_section">
-		<section id="beg">
-			<section class="on_test">Rapid Quiz</section>
-		</section>
-
-		<section id="rndbox">
-			<section id="quesbox">
-				<span style="font-weight:bold;font-size:20px;">Instructions:</span><br>
-				<section class="ins">Total Number of Questions: 10</section>
-				<section class="ins">Time alloted: 10 minutes</section>
-				<section class="ins">Each question carry 1 mark each, no negative marking</section>
-				<section style="height: 220px; border:#efefef 1px solid;margin-top:20px;">
-					<section class="note11">NOTE:</section>
-					<section class="note_section" style="padding:5px">
-						<section style="font-size:17px;" id="note_id">&diams; Click the 'Submit Test' button
-							given in
-							the bottom of this page to Submit your answers.</section>
-						<br>
-						<section style="font-size:17px;" id="note_id">&diams; Test will be submitted after
-							time
-							is
-							Expired.</section>
-						<br>
-						<section style="font-size:17px;" id="note_id">&diams; Do not refresh the Page.
-						</section>
-					</section>
-				</section>
-			</section>
-			<section style="text-align:center;float:right">
-				<input type="button" name="starttest" value="START TEST" class="start" id="starttest">
 			</section>
 		</section>
-	</section>
-	</ul>
-	</li>
-	</ul>
 
+		<div id="start_quiz_button">
+			<button class="btn_start">Start quiz</button>
+		</div>
 	</section>
 	</section>
 	</section>
-
-	<!-- Real Quiz -->
-	<section id="real_section">
-		<section id="beg">
-			<section class="on_test">Real Quiz</section>
-		</section>
-
-		<section id="rndbox">
-			<section id="quesbox">
-				<span style="font-weight:bold;font-size:20px;">Instructions:</span><br>
-				<section class="ins">Total Number of Questions: 10</section>
-				<section class="ins">Time alloted: 10 minutes</section>
-				<section class="ins">Each question carry 1 mark each, no negative marking</section>
-				<section style="height: 220px; border:#efefef 1px solid;margin-top:20px;">
-					<section class="note11">NOTE:</section>
-					<section class="note_section" style="padding:5px">
-						<section style="font-size:17px;" id="note_id">&diams; Click the 'Submit Test' button
-							given in
-							the bottom of this page to Submit your answers.</section>
-						<br>
-						<section style="font-size:17px;" id="note_id">&diams; Test will be submitted after
-							time
-							is
-							Expired.</section>
-						<br>
-						<section style="font-size:17px;" id="note_id">&diams; Do not refresh the Page.
-						</section>
-					</section>
-				</section>
-			</section>
-			<section style="text-align:center;float:right">
-				<input type="button" name="starttest" value="START TEST" class="start" id="starttest"
-					onclick="starttimer('1800')">
-			</section>
-		</section>
-	</section>
-	</ul>
-	</li>
-	</ul>
-
 	</section>
 	</section>
-	</section>
-
 	</section>
 </body>
 

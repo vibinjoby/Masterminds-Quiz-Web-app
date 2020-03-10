@@ -1,17 +1,33 @@
 
 .pricingTable-title{
     text-align: center;
-    color: #6e768d;
+    color: #373738;
     font-size: 3em;
     font-size: 45px;
     margin-bottom: 40px;
     letter-spacing: 0.04em;
 }
+.row {
+  display: inline-flex;
+}
 
+.col-sm-4 {
+  text-align: center;
+  margin-right: 25px;
+}
+
+.container {
+  left: 15%;
+  padding-right: 70px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+}
 .card{
   position: relative;
   max-width: 300px;
-  height: auto;
+  height: 350px;
   background: linear-gradient(-45deg,#fe0847,#feae3f);
   border-radius: 15px;
   margin: 0 auto;
@@ -89,16 +105,21 @@ font-size: 60px;
 
 }
 .option ul li {
+  font-family: serif;
+  font-style: italic;
 margin: 0 0 10px;
 padding: 0;
 list-style: none;
-color: rgb(0, 0, 0);
-font-size: 16px;
+color: #414042;
+font-size: x-large;
 }
 .card a {
-  position: relative;
+  position: absolute;
+  bottom: 58px;
+  left: 31%;
   z-index: 2;
-  background: #f1f1f1;
+  background: #23629F;
+  color: white;
   width: 150px;
   height: 40px;
   line-height: 40px;
@@ -113,6 +134,6 @@ font-size: 16px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
 
 }
-.card a:hover{
+#card a:hover{
     text-decoration: none;
 }

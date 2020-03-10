@@ -65,7 +65,7 @@ margin-bottom: 7px;
 
 #top_box {
   margin-left: 360px;
-  top: 15%;
+  top: 18%;
   position: absolute;
   width: 800px;
   height: 120px;
@@ -81,7 +81,7 @@ width: 710px;
 height: 90px;
 }
 
-.rapid_quiz {
+#rapid_quiz {
   width: 340px;
   height: 70px;
   display:inline-block;
@@ -100,7 +100,7 @@ height: 90px;
   }
 
 
-  .real_quiz {
+  #real_quiz {
     width: 340px;
     height: 70px;
     display:inline-block;
@@ -118,24 +118,29 @@ height: 90px;
     transition: all 0.2s;
     }
 
-    .line{
+  .line{
       margin-left: 49px;
       top: 37px;
       width: 340px;
       height: 47px;
       border-bottom: 10px solid #253840;
       position: absolute;
-      }
+    }
+
+    .active-quiz-type {
+      border-bottom: 10px solid #253840;
+    }
 
 .heading h2 {
-  margin-top: 150px;
+  margin-top: 142px;
   text-align: center;
   color: #253840;
 }
 
 /* Table */
-#score_table {
-  margin-top: 20px;
+.score_table {
+  margin-top: 2px;
+  margin-left: 79px;
 }
 
 table 			      { 
