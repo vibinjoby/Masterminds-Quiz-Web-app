@@ -29,12 +29,14 @@ function drawChart() {
     }
     if(scoreDetails.correct_answer >= 8) {
         document.getElementById('appreciation').innerHTML = 'Congratulations';
-        document.getElementById('final_content').innerHTML = 'You have successfully cleared the Quiz now download the certificate';
+        document.getElementById('final_content').innerHTML = 'You have successfully cleared the Quiz, you can now download the certificate from below';
         document.getElementById('certificate').disabled = false;
+        document.getElementById('smiley').innerHTML = '&#128578;';
     } else {
         document.getElementById('appreciation').innerHTML = 'FAILED';
         document.getElementById('final_content').innerHTML = 'Unfortunately you did not clear the test try again to score more than 80% to clear the test';
         document.getElementById('certificate').disabled = true;
+        document.getElementById('smiley').innerHTML = '&#128542;';
     }
 
     // Optional; add a title and set the width and height of the chart
