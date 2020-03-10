@@ -1,5 +1,17 @@
-
+.container {
+    right: 1%;
+    position: absolute;
+    top: 23%;
+    width: 650px;
+    height: 452px;
+    border-width: 3px;
+    border-color: rgb(138, 138, 138);
+    border-style: solid;
+}
  
+.wrapper {
+    background-color: #fff;
+}
     .headingCentered2 {
         margin-top: 14px;
         margin-right: 20%;
@@ -16,14 +28,28 @@
     }
     #right_content {
         position: absolute;
-        top: 25%;
+        top: 36%;
         right: 0;
-        margin-right: 30%;
+        margin-right: 31%;
     }
    table {
+       padding: 5px;
+       border-radius: 5px;
+       right: 12%;
+       border: 1px solid #bdbdbd;
+       position: absolute;
+       width: 300px;
+       height: 120px;
 
        font-size: 25px;
        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   }
+   table td {
+       color: rgb(3, 3, 3);
+       font-size: 31px;
+       font-family: 'Times New Roman', Times, serif;
+       text-shadow: lightblue;
+       
    }
    button:disabled,
     button[disabled]{
@@ -35,7 +61,7 @@
 
    #bottom_content {
        top: 60%;
-       margin-right: 50px;
+       margin-right: 7px;
        right: 0;
        padding-left: 20px;
     position: absolute;
@@ -56,19 +82,23 @@
       right: 0;
   }
 
-  #bottom_content p {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  #bottom_content p { 
+      font-family:initial ;
       color: #0a8a3f;
-      font-size: 20px;
+      font-size: 25px;
       font-weight: bold;
+  }
+  #bottom_content {
+      right: 4%;
+      top: 67%;
+    position: absolute;
   }
   
   #bottom_buttons {
-    top: 80%;
-    margin-right: 50px;
-    right: 0;
+    top: 89%;
+    right: -58px;
  position: absolute;
- width: 610px;
+ width: 620px;
  height: 90px;
 }
 
@@ -103,9 +133,67 @@
           min-width: 120px;
           border-radius: 3px;
         }
+        #congrats {
+            top: 17%;
+            right: 8%;
+            font-size: 40px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-style: normal;
+            position: absolute;
+            color: #23629F;
+          }
+          #sub_head {
+            top: 27%;
+            right: 19%;
+            font-size: large;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-style: normal;
+            position: absolute;
+            color: rgb(107, 114, 121);
+          }
 
 
+        #heading{
+            right: 15px;
+            position: absolute;
+            top: 123px;;
+            background-color: #23629F;
+            width: 150px;
+            height: 40px;
+          }
+          #heading label{
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 22px;
+            position: absolute;
+            color: #fff;
+          }
 
+          .percentage {
+              right: 42%;
+              bottom: 69%;
+              position: absolute;
+              border-radius: 5px;
+              background-color: #f49528;
+              height: 60px;
+              width: 200px;
+          }
+          #smiley {
+              right: 9%;
+              top: 15%;
+              position: absolute;
+            font-size: 120px;
+          }
+
+          #score_percent {
+              font-weight: bolder;
+              font-style: normal;
+              align-items: center;
+              padding: 52px;
+              font-weight: bold;
+              font-size: 50px;
+              color: rgb(255, 255, 255);
+          }
   
 
 

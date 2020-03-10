@@ -5,9 +5,9 @@ body{
 #quiz_type{
   left: 14.2%;
   position: absolute;
-  top: 25%;;
+  top: 23%;;
   background-color: #23629F;
-  width: 140px;
+  width: 131px;
   height: 40px;
 }
 #quiz_type label{
@@ -32,7 +32,7 @@ body{
 .note_box {
   right: 11%;
     position: absolute;
-    top: 37%;
+    top: 34%;
     width: 500px;
     height: 250px;
     border-width: 1px;
@@ -60,7 +60,7 @@ color: rgb(23, 79, 134);
 }
 .instructions {
 top: 43%;
-left: 19%;
+left: 18%;
 position: absolute;
 }
 .instructions p{
@@ -69,8 +69,8 @@ font-size: x-large;
 font-family: serif;
 }
 .note_ins {
-top: 20%;
-left: 12%;
+top: 11%;
+left: 4%;
 position: absolute;
 }
 .note_ins p{

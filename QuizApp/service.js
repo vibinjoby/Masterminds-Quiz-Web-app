@@ -16,9 +16,10 @@ app.post('/saveLogin', (req, res) => {
       // New User
       req.query["scores"] = [];
       usersObj.users.push(req.query);
-      console.log(usersObj);
       let usersStr = JSON.stringify(usersObj);
       fs.writeFileSync('users.json', usersStr);
+
+      res.end(usersStr);
     }
   });
 });
@@ -31,7 +32,6 @@ app.get('/fetchUserScoreDetails', (req, res) => {
     } else {
       let usersObj = JSON.parse(data);
       let username = req.query.username;
-      console.log(username);
       for (var key in usersObj.users) {
         if (JSON.stringify(usersObj.users[key].username) === JSON.stringify(username)) {
           scoreDetails = usersObj.users[key].scores;
@@ -53,14 +53,14 @@ app.get('/fetchOverallScoreDetails', (req, res) => {
     } else {
       let usersObj = JSON.parse(data);
       for (var key in usersObj.users) {
-        if(usersObj.users[key].scores){
-          for(i=0;i<usersObj.users[key].scores.length;i++) {
-            if(usersObj.users[key].scores[i].quiztype == 'rapid') {
+        if (usersObj.users[key].scores) {
+          for (i = 0; i < usersObj.users[key].scores.length; i++) {
+            if (usersObj.users[key].scores[i].quiztype == 'rapid') {
               var userDetails = {};
               userDetails.username = usersObj.users[key].username;
               userDetails.score = usersObj.users[key].scores[i].score;
               rapidUsersScore.push(userDetails);
-            } else if(usersObj.users[key].scores[i].quiztype == 'real') {
+            } else if (usersObj.users[key].scores[i].quiztype == 'real') {
               var userDetails = {};
               userDetails.username = usersObj.users[key].username;
               userDetails.score = usersObj.users[key].scores[i].score;
@@ -71,7 +71,6 @@ app.get('/fetchOverallScoreDetails', (req, res) => {
       }
       overallScoreDetails.rapidUsersScore = rapidUsersScore;
       overallScoreDetails.realUsersScore = realUsersScore;
-      console.log(JSON.stringify(overallScoreDetails));
       res.end(JSON.stringify(overallScoreDetails));
     }
   });
@@ -88,11 +87,11 @@ app.post('/saveScore', (req, res) => {
     let usersObj = JSON.parse(data);
     scoreObj.score = requestObj.score;
     scoreObj.quiztype = requestObj.quiz_type;
-    scoreObj.scoreDate = new Date().getDate() + ''+ new Date().getMonth() + '' + new Date().getFullYear();
-    console.log(scoreObj);
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    var today = new Date();
+    scoreObj.scoreDate = today.toLocaleDateString("en-US", options);
     for (var key in usersObj.users) {
       if (JSON.stringify(usersObj.users[key].username) === JSON.stringify(requestObj.username)) {
-        console.log('am updating the score');
         isSaved = true;
         usersObj.users[key].scores.push(scoreObj);
       }
@@ -130,7 +129,73 @@ app.listen(8000);
 app.get('/fetchQuestions', (req, res) => {
   let query = req.query;
   fs.readFile(query.category + '.json', (err, data) => {
+    var randomQuestions = {};
     let questionsObj = JSON.parse(data);
-    res.end(JSON.stringify(questionsObj));
+    //random question logic
+    var arr = [];
+    while (arr.length < 11) {
+      var r = Math.floor(Math.random() * 20) + 1;
+      if (arr.indexOf(r) === -1) arr.push(r);
+    }
+    for (i = 0; i < 11; i++) {
+      randomQuestions[i] = questionsObj[arr[i]];
+    }
+    res.end(JSON.stringify(randomQuestions));
+  });
+});
+
+//random questions from all the categories
+app.get('/fetchRapidQuizQuestions', (req, res) => {
+  var overallQnsArr = [];
+  var randomQuestions = {};
+  fs.readFile('verbal.json', (err, data) => {
+    let questionsObj = JSON.parse(data);
+    //random question logic
+    var arr = [];
+    while (arr.length < 11) {
+      var r = Math.floor(Math.random() * 20) + 1;
+      if (arr.indexOf(r) === -1) arr.push(r);
+    }
+    for (i = 0; i < 3; i++) {
+      randomQuestions[i] = questionsObj[arr[i]];
+    }
+    fs.readFile('numerical.json', (err, data) => {
+      let questionsObj = JSON.parse(data);
+      //random question logic
+      var arr = [];
+      while (arr.length < 11) {
+        var r = Math.floor(Math.random() * 20) + 1;
+        if (arr.indexOf(r) === -1) arr.push(r);
+      }
+      for (i = 3; i < 6; i++) {
+        randomQuestions[i] = questionsObj[arr[i]];
+      }
+      fs.readFile('grammar.json', (err, data) => {
+        let questionsObj = JSON.parse(data);
+        //random question logic
+        var arr = [];
+        while (arr.length < 11) {
+          var r = Math.floor(Math.random() * 20) + 1;
+          if (arr.indexOf(r) === -1) arr.push(r);
+        }
+        for (i = 6; i < 9; i++) {
+          randomQuestions[i] = questionsObj[arr[i]];
+        }
+        fs.readFile('logical.json', (err, data) => {
+          let questionsObj = JSON.parse(data);
+          //random question logic
+          var arr = [];
+          while (arr.length < 11) {
+            var r = Math.floor(Math.random() * 20) + 1;
+            if (arr.indexOf(r) === -1) arr.push(r);
+          }
+          for (i = 9; i < 11; i++) {
+            randomQuestions[i] = questionsObj[arr[i]];
+          }
+          res.end(JSON.stringify(randomQuestions));
+        });
+      });
+    });
+    
   });
 });

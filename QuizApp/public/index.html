@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="css/login_style.css" />
   <script src="js/miscellaneous.js"></script>
 
-<body>
+<body onload="initializeDummyValues()">
 
   <header id="topBar-first">
     <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
@@ -21,20 +21,20 @@
       <!-- Login Form -->
       <section id="login_form">
         <form>
-          <input type="text" id="signin_username" class="fadeIn second" placeholder="Enter Username">
-          <input type="password" id="signin_pwd" class="fadeIn third" placeholder="Enter Password">
-          <input type="button" class="fadeIn fourth" value="Log In" onclick="onSignInClick()">
+          <input type="text" id="signin_username" class="fadeIn second" placeholder="Enter Username" required>
+          <input type="password" id="signin_pwd" class="fadeIn third" placeholder="Enter Password" required>
+          <input type="submit" class="fadeIn fourth" value="Log In" onclick="onSignInClick()">
         </form>
       </section>
 
       <section id="signUp_form" style="display: none;">
         <form>
-          <input type="text" id="signup" class="fadeIn second" name="signup" placeholder="Enter First Name">
-          <input type="text" id="signup" class="fadeIn second" name="signup" placeholder="Enter Last Name">
-          <input type="text" id="signup" class="fadeIn second" name="signup" placeholder="Enter username">
-          <input type="password" id="signup" class="fadeIn third" name="login" placeholder="Enter password">
-          <input type="password" id="signup" class="fadeIn third" name="login" placeholder="Confirm password">
-          <input type="submit" class="fadeIn fourth" value="Sign Up">
+          <input type="text" id="fname" class="fadeIn second" name="signup" placeholder="Enter First Name" required>
+          <input type="text" id="lname" class="fadeIn second" name="signup" placeholder="Enter Last Name">
+          <input type="text" id="uname" class="fadeIn second" name="signup" placeholder="Enter username" required>
+          <input type="password" id="pwd" class="fadeIn third" name="login" placeholder="Enter password" required>
+          <input type="password" id="c_pwd" class="fadeIn third" name="login" placeholder="Confirm password" required>
+          <input type="submit" class="fadeIn fourth" value="Sign Up" onclick="onSignUpClick()">
         </form>
       </section>
   </div>

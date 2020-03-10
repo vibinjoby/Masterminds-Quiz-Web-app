@@ -80,12 +80,12 @@
         "image_url":"logical_img_8.jpg"
     },
     "9": {
-        "question": "Following the below rules, work out what the new sequence of shapes would look lik Rules: AA - Reverse the order of the entire sequence AB - Swap the position of the first and last shape AC - All white squares become orange circles AD - Every shape to the left of a circle is flipped upside down BC - Swap the 2nd and 5th shapes’ positions BD - Move the 3rd shape to the end of the sequence CD - All orange shapes become blue",
-        "correct_answer": "2",
-        "option_1": "A",
-        "option_2": "B",
-        "option_3": "C",
-        "option_4": "D",
+        "question": "Look carefully at the sequence of symbols to find the pattern. Select correct pattern.",
+        "correct_answer": "4",
+        "option_1": "1",
+        "option_2": "2",
+        "option_3": "3",
+        "option_4": "4",
         "is_image":"Y",
         "image_url":"logical_img_9.jpg"
     },

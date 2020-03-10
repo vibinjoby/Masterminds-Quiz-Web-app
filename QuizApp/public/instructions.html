@@ -5,6 +5,7 @@
 	<title>Quiz</title>
 	<link rel="stylesheet" type="text/css" href="css/instructions.css" />
 	<link rel="stylesheet" type="text/css" href="css/category_style.css" />
+	<script src="js/miscellaneous.js"></script>
 	<script type="text/javascript">
 		var urlParams = new URLSearchParams(window.location.search);
 		var quiztype = urlParams.get('quiztype');
@@ -15,7 +16,7 @@
 	</script>
 </head>
 
-<body>
+<body onload="initializeInstructionsValues()">
 	<section class="wrapper">
 		<header id="topBar-first">
 			<img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
@@ -26,19 +27,22 @@
 
 		<section id="topBar-second">
 			<section id="top-bar-contents">
-				<a href="category.html" style="color: white;text-decoration: none;">QUIZ OPTIONS</a>
+				<a href="quiztype.html" style="color: white;text-decoration: none;">QUIZ OPTIONS</a>
 				<label class="verticalLine"></label>
-				<a href="profile.html" style="color: white;text-decoration: none;">HIGH SCORE</a>
+				<a id="highScoreLink" href="profile.html?profilepage=highscore"
+					style="color: white;text-decoration: none;" onclick="onHighScoreSelection()">HIGH SCORE</a>
 				<label class="verticalLine"></label>
-				<a href="profile.html" style="color: white;text-decoration: none;margin-right: 39px;">PREVIOUS SCORE</a>
+				<a id="myScoreLink" href="profile.html?profilepage=myscore"
+					style="color: white;text-decoration: none;margin-right: 39px;" onclick="onMyScoreSelection()">MY
+					SCORE</a>
 			</section>
 		</section>
 
 		<section id="quiz_type">
-			<label>Practice Quiz</label>
+			<label id="quiz_lbl">Practice Quiz</label>
 		</section>
 		<section class="container">
-			
+
 			<!-- PRACTICE QUIZ -->
 
 			<section id="practice_section">
@@ -46,8 +50,8 @@
 					<label>Instructions:</label>
 					<section class="instructions">
 						<p>Total number of questions : 10</p>
-						<p>Time allotted : 10 minutes.</p>
-						<p>Each question carry 1 mark, no negative marks.</p>
+						<p>Time allotted : 5 minutes in total</p>
+						<p>No markings</p>
 					</section>
 				</section>
 				<section class="note_box">
@@ -55,66 +59,68 @@
 						<label>Note:</label>
 						<section class="note_ins">
 							<p>Click the "submit quiz" button given in the top right of the quiz page to submit your
-								answer</p>
-							<p>Test will be submitted automatically if the time expired.</p>
-							<p>Don't refresh the page.</p>
+								answer at any point of time</p>
+							<p>Test will be submitted automatically if the time expired</p>
+							<p>Don't hit refresh or back button while you are inside the test page</p>
 						</section>
 					</section>
 				</section>
+			</section>
 
-				<!-- RAPID QUIZ -->
+			<!-- RAPID QUIZ -->
 
-				<!-- <section id="rapid_section">
-					<section class="instruction_box">
-						<label>Instructions:</label>
-						<section class="instructions">
-							<p>Total number of questions : 10</p>
-							<p>Time allotted : 10 minutes.</p>
-							<p>Each question carry 1 mark, no negative marks.</p>
+			<section id="rapid_section">
+				<section class="instruction_box">
+					<label>Instructions:</label>
+					<section class="instructions">
+						<p>Total number of questions : 10</p>
+						<p>Time allotted : 10 seconds for each question.</p>
+						<p>Each question carry 1 mark, no negative marks</p>
+					</section>
+				</section>
+				<section class="note_box">
+					<section class="note">
+						<label>Note:</label>
+						<section class="note_ins">
+							<p>Click the "submit quiz" button given in the top right of the quiz page to submit your
+								answer at any point of time</p>
+							<p>Test will be submitted automatically if the time expired</p>
+							<p>Don't hit refresh or back button while you are inside the test page</p>
 						</section>
 					</section>
-					<section class="note_box">
-						<section class="note">
-							<label>Note:</label>
-							<section class="note_ins">
-								<p>Click the "submit quiz" button given in the top right of the quiz page to submit your
-									answer</p>
-								<p>Test will be submitted automatically if the time expired.</p>
-								<p>Don't refresh the page.</p>
-							</section>
+				</section>
+			</section>
+
+
+			<!-- REAL QUIZ -->
+
+			<section id="real_section">
+				<section class="instruction_box">
+					<label>Instructions:</label>
+					<section class="instructions">
+						<p>Total number of questions : 10</p>
+						<p>Time allotted : 5 minutes in total</p>
+						<p>Each question carries 1 mark, no negative marks</p>
+					</section>
+				</section>
+				<section class="note_box">
+					<section class="note">
+						<label>Note:</label>
+						<section class="note_ins">
+							<p>Click the "submit quiz" button given in the top right of the quiz page to submit your
+								answer at any point of time</p>
+							<p>Test will be submitted automatically if the time expired</p>
+							<p>Don't hit refresh or back button while you are inside the test page</p>
 						</section>
-					</section> -->
-
-
-					<!-- REAL QUIZ -->
-
-					<!-- <section id="real_section">
-						<section class="instruction_box">
-							<label>Instructions:</label>
-							<section class="instructions">
-								<p>Total number of questions : 10</p>
-								<p>Time allotted : 10 minutes.</p>
-								<p>Each question carry 1 mark, no negative marks.</p>
-							</section>
-						</section>
-						<section class="note_box">
-							<section class="note">
-								<label>Note:</label>
-								<section class="note_ins">
-									<p>Click the "submit quiz" button given in the top right of the quiz page to submit your
-										answer</p>
-									<p>Test will be submitted automatically if the time expired.</p>
-									<p>Don't refresh the page.</p>
-								</section>
-							</section>
-						</section> -->
+					</section>
+				</section>
 
 
 			</section>
 		</section>
 
 		<div id="start_quiz_button">
-			<button class="btn_start">Start quiz</button>
+			<button class="btn_start" onclick="navigateToQuizPage()">Start quiz</button>
 		</div>
 	</section>
 	</section>

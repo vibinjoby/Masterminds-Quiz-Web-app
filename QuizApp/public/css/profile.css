@@ -134,6 +134,7 @@ height: 90px;
 .heading h2 {
   margin-top: 142px;
   text-align: center;
+  margin-left: 35px;
   color: #253840;
 }
 
@@ -165,6 +166,26 @@ tbody tr        { height:48px; border-bottom:1px solid rgb(247, 255, 239) ;
 
 
 td,th 					{ text-align:center; border:1px solid rgb(238, 253, 223)
+}
+
+table.tableSection {
+  display: table;
+  width: 100%;
+}
+table.tableSection thead, table.tableSection tbody {
+  float: left;
+  width: 100%;
+}
+table.tableSection tbody {
+  overflow: auto;
+}
+table.tableSection tr {
+  width: 100%;
+  display: table;
+  text-align: left;
+}
+table.tableSection th, table.tableSection td {
+  width: 33%;
 }
   
   

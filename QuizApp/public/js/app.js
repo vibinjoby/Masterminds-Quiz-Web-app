@@ -26,8 +26,9 @@ if (isRapidQuiz) {
     //10 seconds for each question
     minutes = 10;
 }
-startTimer(minutes);
-
+if(!isPracticeQuiz) {
+    startTimer(minutes);
+}
 
 function startTimer(duration) {
     var timer = duration, minutes, seconds;
@@ -59,14 +60,20 @@ function startTimer(duration) {
                     document.getElementById('next_btn').style.visibility = 'hidden';
                 }
             }
+            //Submit the quiz when the time runs out
+            if(isRapidQuiz || isRealQuiz) {
+                if(questionNumber == 10) {
+                    onSubmitQuiz(true);
+                }
+            }
         }
     }, 1000);
 }
 
 function loadQuestions() {
     var xhr = new XMLHttpRequest();
-    if (category) {
-        var url = "http://localhost:8000/fetchQuestions?category=" + category;
+    if(quiz_type == 'real') {
+        var url = "http://localhost:8000/fetchRapidQuizQuestions";
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var status = xhr.status;
@@ -80,6 +87,23 @@ function loadQuestions() {
         xhr.open("GET", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send("");
+    } else {
+        if (category) {
+            var url = "http://localhost:8000/fetchQuestions?category=" + category;
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    var status = xhr.status;
+                    if (status === 0 || (200 >= status && status < 400)) {
+                        questionObj = JSON.parse(xhr.responseText);
+                        initializeDummyValues();
+                        updateQuestions();
+                    }
+                }
+            };
+            xhr.open("GET", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send("");
+        }
     }
 }
 
@@ -156,6 +180,14 @@ function onNextClick() {
         } else {
             questionNumber = 1;
         }
+        if (questionNumber == 10) {
+            document.getElementById('prev_btn').style.visibility = 'hidden';
+            document.getElementById('next_btn').style.visibility = 'hidden';
+            if(!isPracticeQuiz) {
+                document.getElementById('submit_btn').style.visibility = 'visible';
+            }
+        }
+
         updateQuestions();
     }
 }
@@ -210,7 +242,7 @@ function onQuestionChange() {
                 onPracticeQuizAnswerSelection(j);
             } else {
                 if (questionObj[questionNumber].selectedAnswer == j) {
-                    document.getElementById('option' + j + '_check').style.visibility = "visible";
+                    //document.getElementById('option' + j + '_check').style.visibility = "visible";
                     document.getElementById('option' + j + '_li').classList.add('answer-active');
                 } else {
                     document.getElementById('option' + j + '_check').style.visibility = "hidden";
@@ -298,8 +330,8 @@ function onAnswerSelected(li_id) {
         } else {
             if (li_id.id == "option" + i + "_li") {
                 questionObj[questionNumber].selectedAnswer = i;
-                document.getElementById('option' + i + '_check').style.visibility = "visible";
-                document.getElementById('option' + i + '_li').classList.add('answer-active');
+                //document.getElementById('option' + i + '_check').style.visibility = "visible";
+                document.getElementById('option' + i + '_li').classList.add('selected-answer');
 
                 //update the question number with the color
                 if (!questionObj[questionNumber].isMarked) {
@@ -307,8 +339,8 @@ function onAnswerSelected(li_id) {
                     document.getElementById("qn_" + questionNumber).style.backgroundColor = "#53a66b";
                 }
             } else {
-                document.getElementById('option' + i + '_check').style.visibility = "hidden";
-                document.getElementById('option' + i + '_li').classList.remove('answer-active');
+                //document.getElementById('option' + i + '_check').style.visibility = "hidden";
+                document.getElementById('option' + i + '_li').classList.remove('selected-answer');
             }
         }
     }
@@ -392,7 +424,7 @@ function onExitTest() {
     document.getElementsByClassName('modal-header')[0].innerHTML = 'Do you want to exit the test midway?';
 
     document.getElementById('ok_btn_popup').onclick = function () {
-        window.location.href = 'category.html';
+        window.location.href = 'quiztype.html';
     }
     // When the user clicks on cancel btn, close the modal
     document.getElementById('cancel_btn_popup').onclick = function () {
@@ -400,7 +432,7 @@ function onExitTest() {
     }
 }
 
-function onSubmitQuiz() {
+function onSubmitQuiz(isTimeOut) {
     var scoreDetails = { "unanswered": 0, "correct_answer": 0, "wrong_answer": 0 };
     if (typeof (Storage) !== "undefined") {
         for (i = 1; i <= 10; i++) {
@@ -415,10 +447,27 @@ function onSubmitQuiz() {
                 scoreDetails.wrong_answer += 1;
             }
         }
-        scoreDetails.category = category;
-        scoreDetails.quiz_type = quiz_type;
-        sessionStorage.setItem('userScore', JSON.stringify(scoreDetails));
-        saveScore(scoreDetails);
-        window.location.href = 'scorepage.html?category='+category+'&quiztype='+quiz_type;
+        if (scoreDetails.unanswered > 0 && !isTimeOut) {
+            document.getElementById("myModal").style.display = 'block';
+            document.getElementsByClassName('modal-header')[0].innerHTML = 'You still have some unanswered questions.. Do you still want to submit?';
+
+            document.getElementById('ok_btn_popup').onclick = function () {
+                scoreDetails.category = category;
+                scoreDetails.quiz_type = quiz_type;
+                sessionStorage.setItem('userScore', JSON.stringify(scoreDetails));
+                saveScore(scoreDetails);
+                window.location.href = 'scorepage.html?category=' + category + '&quiztype=' + quiz_type;
+            }
+            // When the user clicks on cancel btn, close the modal
+            document.getElementById('cancel_btn_popup').onclick = function () {
+                document.getElementById("myModal").style.display = "none";
+            }
+        } else {
+            scoreDetails.category = category;
+            scoreDetails.quiz_type = quiz_type;
+            sessionStorage.setItem('userScore', JSON.stringify(scoreDetails));
+            saveScore(scoreDetails);
+            window.location.href = 'scorepage.html?category=' + category + '&quiztype=' + quiz_type;
+        } 
     }
 }
