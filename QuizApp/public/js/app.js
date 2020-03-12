@@ -26,7 +26,7 @@ if (isRapidQuiz) {
     //10 seconds for each question
     minutes = 10;
 }
-if(!isPracticeQuiz) {
+if (!isPracticeQuiz) {
     startTimer(minutes);
 }
 
@@ -61,8 +61,8 @@ function startTimer(duration) {
                 }
             }
             //Submit the quiz when the time runs out
-            if(isRapidQuiz || isRealQuiz) {
-                if(questionNumber == 10) {
+            if (isRapidQuiz || isRealQuiz) {
+                if (questionNumber == 10) {
                     onSubmitQuiz(true);
                 }
             }
@@ -72,7 +72,7 @@ function startTimer(duration) {
 
 function loadQuestions() {
     var xhr = new XMLHttpRequest();
-    if(quiz_type == 'real') {
+    if (quiz_type == 'real') {
         var url = "http://localhost:8000/fetchRapidQuizQuestions";
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -183,7 +183,7 @@ function onNextClick() {
         if (questionNumber == 10) {
             document.getElementById('prev_btn').style.visibility = 'hidden';
             document.getElementById('next_btn').style.visibility = 'hidden';
-            if(!isPracticeQuiz) {
+            if (!isPracticeQuiz) {
                 document.getElementById('submit_btn').style.visibility = 'visible';
             }
         }
@@ -456,7 +456,12 @@ function onSubmitQuiz(isTimeOut) {
                 scoreDetails.quiz_type = quiz_type;
                 sessionStorage.setItem('userScore', JSON.stringify(scoreDetails));
                 saveScore(scoreDetails);
-                window.location.href = 'scorepage.html?category=' + category + '&quiztype=' + quiz_type;
+                document.getElementById('myModal').style.display = 'none';
+                document.getElementById("loading").style.display = "block";
+                setTimeout(function () {
+                    window.location.href = 'scorepage.html?category=' + category + '&quiztype=' + quiz_type;
+                }, 1000);  // 1 second
+
             }
             // When the user clicks on cancel btn, close the modal
             document.getElementById('cancel_btn_popup').onclick = function () {
@@ -467,7 +472,12 @@ function onSubmitQuiz(isTimeOut) {
             scoreDetails.quiz_type = quiz_type;
             sessionStorage.setItem('userScore', JSON.stringify(scoreDetails));
             saveScore(scoreDetails);
-            window.location.href = 'scorepage.html?category=' + category + '&quiztype=' + quiz_type;
-        } 
+            document.getElementById('myModal').style.display = 'none';
+            document.getElementById("loading").style.display = "block";
+            setTimeout(function () {
+                window.location.href = 'scorepage.html?category=' + category + '&quiztype=' + quiz_type;
+            }, 1000);  // 1 second
+
+        }
     }
 }

@@ -102,7 +102,11 @@ function onSignInClick() {
                 if (xhr.responseText) {
                     var userObj = JSON.parse(xhr.responseText);
                     sessionStorage.setItem('userObj', JSON.stringify(userObj));
-                    window.location.href = "quiztype.html";
+                    document.getElementById("loading").style.display="block";
+                    setTimeout(function() {
+                        window.location.href = "quiztype.html";
+                    }, 1000);  // 1 second
+                    
                 } else {
                     document.getElementById('invalid-sign-in').style.display = 'block';
                     console.log('incorrect user id and password');
