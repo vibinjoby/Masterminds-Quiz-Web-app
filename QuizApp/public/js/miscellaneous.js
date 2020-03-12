@@ -32,7 +32,7 @@ function initializeDummyValues() {
     var confirm_password = document.getElementById("c_pwd");
     var signin_username = document.getElementById("signin_username");
     var signin_pwd = document.getElementById("signin_pwd");
-    var signup_username = document.getElementById('uname').value;
+    var signup_username = document.getElementById('uname');
     //hide the error message on input of username/password on input
     signin_username.oninput = hideSignInErrorMessage;
     signup_username.oninput = hideSignInErrorMessage;
