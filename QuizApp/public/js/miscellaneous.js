@@ -6,6 +6,7 @@ var profilepage = urlParams.get('profilepage');
 
 
 function onSigninUpToggle(isSignin) {
+    document.getElementById('invalid-sign-in').style.display = 'none';
     if (isSignin) {
         document.getElementById('sign_in_btn').classList.remove('inactive');
         document.getElementById('sign_in_btn').classList.add('active');
@@ -21,10 +22,20 @@ function onSigninUpToggle(isSignin) {
     }
 }
 
+function hideSignInErrorMessage() {
+    document.getElementById('invalid-sign-in').style.display = 'none';
+}
+
 function initializeDummyValues() {
     //sign up page validation
-    var password = document.getElementById("pwd")
+    var password = document.getElementById("pwd");
     var confirm_password = document.getElementById("c_pwd");
+    var signin_username = document.getElementById("signin_username");
+    var signin_pwd = document.getElementById("signin_pwd");
+    //hide the error message on input of username/password on input
+    signin_username.oninput = hideSignInErrorMessage;
+    signin_pwd.oninput = hideSignInErrorMessage;
+    //check if the password and confirm password are same on change
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
 }
@@ -33,33 +44,38 @@ function validatePassword() {
     var password = document.getElementById("pwd")
     var confirm_password = document.getElementById("c_pwd");
     if (password.value != confirm_password.value) {
+        console.log('passwords dont match');
         confirm_password.setCustomValidity("Passwords Don't Match");
         return false;
     } else {
+        console.log('passwords match');
         confirm_password.setCustomValidity('');
         return true;
     }
 }
 
 function onSignUpClick() {
-    if(validatePassword) {
+    if(validatePassword() === true) {
         var xhr = new XMLHttpRequest();
         var f_name = document.getElementById('fname').value;
         var l_nme = document.getElementById('lname').value;
         var username = document.getElementById('uname').value;
         var password = document.getElementById('pwd').value;
+        
         if(f_name && username && password) {
-            var url = 'http://localhost:8000/saveLogin?first_name='+f_name+'last_name='+l_nme+'username=' + username + '&password=' + password;
+            var url = 'http://localhost:8000/saveLogin?first_name='+f_name+'&last_name='+l_nme+'&username=' + username + '&password=' + password;
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var status = xhr.status;
                     if (status === 0 || (200 >= status && status < 400)) {
                         if (xhr.responseText) {
                             var userObj = JSON.parse(xhr.responseText);
-                            sessionStorage.setItem('userObj', JSON.stringify(userObj));
-                            window.location.href = "quiztype.html";
+                            document.getElementById("myModal").style.display = 'block';
+                            document.getElementById('ok_btn_popup').onclick = function () {
+                                window.location.href = 'index.html';
+                            }
                         } else {
-                            console.log('incorrect user id and password');
+                            console.log('No response from servr');
                         }
                     }
                 }
@@ -70,6 +86,7 @@ function onSignUpClick() {
         } else {
             console.log('required fields not filled');
         }
+        return false;
     }
 }
 
@@ -87,6 +104,7 @@ function onSignInClick() {
                     sessionStorage.setItem('userObj', JSON.stringify(userObj));
                     window.location.href = "quiztype.html";
                 } else {
+                    document.getElementById('invalid-sign-in').style.display = 'block';
                     console.log('incorrect user id and password');
                 }
             }
@@ -95,6 +113,7 @@ function onSignInClick() {
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send("");
+    return false;
 }
 
 function onSignOut() {

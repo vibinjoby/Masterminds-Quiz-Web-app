@@ -50,7 +50,7 @@ h2 {
   font-weight: 600;
   text-transform: uppercase;
   display:inline-block;
-  margin: 40px 8px 10px 8px; 
+  margin: 13px 8px 10px 8px; 
   color: #cccccc;
 }
 
@@ -293,4 +293,18 @@ input[type=text]:placeholder {
 
 * {
   box-sizing: border-box;
+}
+
+#invalid-sign-in {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 68px;
+  display: none;
+  text-align: start;
+  background: #EFDD6F;
+}
+
+#incorrect-singin-lbl {
+  margin-left: 23px;
+  font-size: small;
 }

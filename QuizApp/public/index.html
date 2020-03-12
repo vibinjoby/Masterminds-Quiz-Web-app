@@ -3,6 +3,7 @@
 
 <head>
   <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="css/category_style.css" />
   <link rel="stylesheet" type="text/css" href="css/login_style.css" />
   <script src="js/miscellaneous.js"></script>
 
@@ -20,24 +21,45 @@
       <h2 class="inactive underlineHover" id="signup_btn" onclick="onSigninUpToggle(false)">Sign Up </h2>
       <!-- Login Form -->
       <section id="login_form">
-        <form>
+        <form onsubmit="return onSignInClick()">
           <input type="text" id="signin_username" class="fadeIn second" placeholder="Enter Username" required>
           <input type="password" id="signin_pwd" class="fadeIn third" placeholder="Enter Password" required>
-          <input type="submit" class="fadeIn fourth" value="Log In" onclick="onSignInClick()">
+          <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
       </section>
 
       <section id="signUp_form" style="display: none;">
-        <form>
+        <form onsubmit="return onSignUpClick()">
           <input type="text" id="fname" class="fadeIn second" name="signup" placeholder="Enter First Name" required>
           <input type="text" id="lname" class="fadeIn second" name="signup" placeholder="Enter Last Name">
-          <input type="text" id="uname" class="fadeIn second" name="signup" placeholder="Enter username" required>
-          <input type="password" id="pwd" class="fadeIn third" name="login" placeholder="Enter password" required>
+          <input type="text" id="uname" class="fadeIn second" name="signup" placeholder="Enter username" required pattern="^[a-zA-Z0-9]+(?:[_ -]?[a-zA-Z0-9])*$"
+          title="Can contain only alphabets and numbers and underscore">
+          <input type="password" id="pwd" class="fadeIn third" name="login" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
           <input type="password" id="c_pwd" class="fadeIn third" name="login" placeholder="Confirm password" required>
-          <input type="submit" class="fadeIn fourth" value="Sign Up" onclick="onSignUpClick()">
+          <input type="submit" class="fadeIn fourth" value="Sign Up">
         </form>
       </section>
+      <section id="invalid-sign-in">
+          <img src="assets/invalid-sign-in.jpg" width="20" height="20">
+          <strong>Incorrect username or password</strong><br>
+          <label id="incorrect-singin-lbl">Try entering your password information again</label>
+        </section>
   </div>
+
+  
+  <!-- The Modal popup-->
+  <div id="myModal" class="modal" >
+    <!-- Modal popup content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>You have successfully signed up as a Master minder..Now please proceed to sign in</h2>
+      </div>
+      <div class="modal-body">
+        <button id="ok_btn_popup" class="progress_btns">OK</button>
+      </div>
+    </div>
+
   </div>
 </body>
 </head>
