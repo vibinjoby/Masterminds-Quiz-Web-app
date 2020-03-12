@@ -196,6 +196,26 @@ app.get('/fetchRapidQuizQuestions', (req, res) => {
         });
       });
     });
-    
+
   });
+});
+
+app.get('/checkUsernameSignup', (req, res) => {
+  fs.readFile('users.json', (err, data) => {
+    var foundUserObj = null;
+    let userNameObj = req.query;
+    if (err) throw err;
+    let usersObj = JSON.parse(data);
+    // check user exists
+    for (var key in usersObj.users) {
+      if (JSON.stringify(usersObj.users[key].username) === JSON.stringify(userNameObj.username)) {
+        foundUserObj = usersObj.users[key];
+      }
+    }
+    if (foundUserObj == null) {
+      res.end(null);
+    } else {
+      res.end(JSON.stringify(foundUserObj));
+    }
+  })
 });

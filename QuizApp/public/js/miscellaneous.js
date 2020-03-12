@@ -32,8 +32,10 @@ function initializeDummyValues() {
     var confirm_password = document.getElementById("c_pwd");
     var signin_username = document.getElementById("signin_username");
     var signin_pwd = document.getElementById("signin_pwd");
+    var signup_username = document.getElementById('uname').value;
     //hide the error message on input of username/password on input
     signin_username.oninput = hideSignInErrorMessage;
+    signup_username.oninput = hideSignInErrorMessage;
     signin_pwd.oninput = hideSignInErrorMessage;
     //check if the password and confirm password are same on change
     password.onchange = validatePassword;
@@ -55,34 +57,15 @@ function validatePassword() {
 }
 
 function onSignUpClick() {
-    if(validatePassword() === true) {
+    if (validatePassword() === true) {
         var xhr = new XMLHttpRequest();
         var f_name = document.getElementById('fname').value;
         var l_nme = document.getElementById('lname').value;
         var username = document.getElementById('uname').value;
         var password = document.getElementById('pwd').value;
-        
-        if(f_name && username && password) {
-            var url = 'http://localhost:8000/saveLogin?first_name='+f_name+'&last_name='+l_nme+'&username=' + username + '&password=' + password;
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    var status = xhr.status;
-                    if (status === 0 || (200 >= status && status < 400)) {
-                        if (xhr.responseText) {
-                            var userObj = JSON.parse(xhr.responseText);
-                            document.getElementById("myModal").style.display = 'block';
-                            document.getElementById('ok_btn_popup').onclick = function () {
-                                window.location.href = 'index.html';
-                            }
-                        } else {
-                            console.log('No response from servr');
-                        }
-                    }
-                }
-            };
-            xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send("");
+
+        if (f_name && username && password) {
+            isUsernameAlreadyExists(f_name,l_nme,username,password);
         } else {
             console.log('required fields not filled');
         }
@@ -102,12 +85,13 @@ function onSignInClick() {
                 if (xhr.responseText) {
                     var userObj = JSON.parse(xhr.responseText);
                     sessionStorage.setItem('userObj', JSON.stringify(userObj));
-                    document.getElementById("loading").style.display="block";
-                    setTimeout(function() {
+                    document.getElementById("loading").style.display = "block";
+                    setTimeout(function () {
                         window.location.href = "quiztype.html";
                     }, 1000);  // 1 second
-                    
                 } else {
+                    document.getElementById('error-header').innerHTML = 'Incorrect username or password';
+                    document.getElementById('incorrect-singin-lbl').innerHTML = 'Try entering your password information again';
                     document.getElementById('invalid-sign-in').style.display = 'block';
                     console.log('incorrect user id and password');
                 }
@@ -118,6 +102,48 @@ function onSignInClick() {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send("");
     return false;
+}
+
+function isUsernameAlreadyExists(f_name,l_nme,username,password) {
+    //checkUsernameSignup
+    var xhr = new XMLHttpRequest();
+    var url = 'http://localhost:8000/checkUsernameSignup?username=' + username;
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            var status = xhr.status;
+            if (status === 0 || (200 >= status && status < 400)) {
+                if (xhr.responseText) {
+                    document.getElementById('error-header').innerHTML = 'Username already exists';
+                    document.getElementById('incorrect-singin-lbl').innerHTML = 'Please try a different username';
+                    document.getElementById('invalid-sign-in').style.display = 'block';
+                } else {
+                    var url = 'http://localhost:8000/saveLogin?first_name=' + f_name + '&last_name=' + l_nme + '&username=' + username + '&password=' + password;
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            var status = xhr.status;
+                            if (status === 0 || (200 >= status && status < 400)) {
+                                if (xhr.responseText) {
+                                    var userObj = JSON.parse(xhr.responseText);
+                                    document.getElementById("myModal").style.display = 'block';
+                                    document.getElementById('ok_btn_popup').onclick = function () {
+                                        window.location.href = 'index.html';
+                                    }
+                                } else {
+                                    console.log('No response from servr');
+                                }
+                            }
+                        }
+                    };
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    xhr.send("");
+                }
+            }
+        }
+    };
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send("");
 }
 
 function onSignOut() {
@@ -142,7 +168,7 @@ function onCategorySelection(categoryName) {
 }
 
 function onQuizTypeSelection(quizType) {
-    if(quizType != 'real') {
+    if (quizType != 'real') {
         window.location.href = 'category.html?quiztype=' + quizType;
     } else {
         window.location.href = 'instructions.html?quiztype=' + quizType;
