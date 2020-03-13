@@ -6,6 +6,7 @@ var questionsAnswered = 0;
 var questionObj = null;
 var minutes = 60 * 5;
 var timerInterval;
+var isLastQuestion = false;
 
 //Identify the type of quiz and make changes to the screen accordingly
 var urlParams = new URLSearchParams(window.location.search);
@@ -26,6 +27,7 @@ if (isRapidQuiz) {
     //10 seconds for each question
     minutes = 10;
 }
+// No time limit for practice quiz
 if (!isPracticeQuiz) {
     startTimer(minutes);
 }
@@ -58,19 +60,45 @@ function startTimer(duration) {
                 } else {
                     document.getElementById('submit_btn').style.visibility = 'visible';
                     document.getElementById('next_btn').style.visibility = 'hidden';
-                }
-            }
-            //Submit the quiz when the time runs out
-            if (isRapidQuiz || isRealQuiz) {
-                if (questionNumber == 10) {
+                    //Submit the quiz when the time runs out
                     onSubmitQuiz(true);
                 }
+            } else {
+                //Submit the quiz when the time runs out
+                onSubmitQuiz(true);
             }
         }
     }, 1000);
 }
 
 function loadQuestions() {
+    window.onload = function () {
+        console.log('hey you');
+        if (typeof history.pushState === "function") {
+            history.pushState("jibberish", null, null);
+            window.onpopstate = function () {
+                history.pushState('newjibberish', null, null);
+                // Handle the back (or forward) buttons here
+                // Will NOT handle refresh, use onbeforeunload for this.
+            };
+        }
+        else {
+            var ignoreHashChange = true;
+            window.onhashchange = function () {
+                if (!ignoreHashChange) {
+                    ignoreHashChange = true;
+                    window.location.hash = Math.random();
+                    // Detect and redirect change here
+                    // Works in older FF and IE9
+                    // * it does mess with your hash symbol (anchor?) pound sign
+                    // delimiter on the end of the URL
+                }
+                else {
+                    ignoreHashChange = false;   
+                }
+            };
+        }
+    }
     var xhr = new XMLHttpRequest();
     if (quiz_type == 'real') {
         var url = "http://localhost:8000/fetchRapidQuizQuestions";
@@ -152,6 +180,7 @@ function onNextClick() {
                 questionNumber += 1;
             }
             if (questionNumber == 10) {
+                isLastQuestion = true;
                 document.getElementById('next_btn').style.visibility = 'hidden';
                 document.getElementById('submit_btn').style.visibility = 'visible';
             }

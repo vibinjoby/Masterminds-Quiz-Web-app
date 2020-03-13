@@ -4,13 +4,17 @@
 <head>
     <title>Quiz</title>
     <link rel="stylesheet" type="text/css" href="css/quiz_page.css" />
+    <script>
+            
+            </script> 
     <script src="js/app.js"></script>
+    
 </head>
 
 <body onload="loadQuestions()">
     <header id="topBar-first">
-        <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
-        <img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" />
+            <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" onclick="window.location.href='quiztype.html'"/>
+            <img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" onclick="window.location.href='quiztype.html'"/>
         <label id="user_name">Welcome Vibin</label>
         <button id="signout-btn" onclick="onExitTest()">Exit Test</button>
     </header>

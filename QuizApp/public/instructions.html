@@ -19,14 +19,16 @@
 <body onload="initializeInstructionsValues()">
 	<section class="wrapper">
 		<header id="topBar-first">
-			<img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" />
-			<img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" />
+				<img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" onclick="window.location.href='quiztype.html'"/>
+				<img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" onclick="window.location.href='quiztype.html'"/>
 			<label id="user_name">Welcome <span id="username"></span></label>
 			<button id="signout-btn" onclick="onSignOut()">Sign out</button>
 		</header>
 
 		<section id="topBar-second">
 			<section id="top-bar-contents">
+					<a href="tutorials.html" style="color: white;text-decoration: none;">TUTORIALS</a>
+					<label class="verticalLine"></label>
 				<a href="quiztype.html" style="color: white;text-decoration: none;">QUIZ OPTIONS</a>
 				<label class="verticalLine"></label>
 				<a id="highScoreLink" href="profile.html?profilepage=highscore"

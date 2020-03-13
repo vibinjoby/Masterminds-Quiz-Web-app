@@ -2,6 +2,11 @@ var scoreDetails = {};
 var isHighScorePage = false;
 var urlParams = new URLSearchParams(window.location.search);
 var profilepage = urlParams.get('profilepage');
+var isUserEmptyRapid = true;
+var isUserEmptyReal = true;
+
+var isOverallEmptyRapid = true;
+var isOverallEmptyReal = true;
 
 
 
@@ -218,12 +223,12 @@ function initializeUserName() {
 function getRapidQuizScore() {
     if (isHighScorePage) {
         document.getElementById("overall-real-score-table").style.display = 'none';
-        document.getElementById("overall-rapid-score-table").style.display = 'table';
+        document.getElementById("overall-rapid-score-table").style.display = 'block';
         document.getElementById('rapid_quiz').classList.add('active-quiz-type');
         document.getElementById('real_quiz').classList.remove('active-quiz-type');
     } else {
         document.getElementById("user-real-score-table").style.display = 'none';
-        document.getElementById("user-rapid-score-table").style.display = 'table';
+        document.getElementById("user-rapid-score-table").style.display = 'block';
         document.getElementById('rapid_quiz').classList.add('active-quiz-type');
         document.getElementById('real_quiz').classList.remove('active-quiz-type');
     }
@@ -232,14 +237,13 @@ function getRapidQuizScore() {
 function getRealQuizScore() {
     if (isHighScorePage) {
         document.getElementById("overall-rapid-score-table").style.display = 'none';
-        document.getElementById("overall-real-score-table").style.display = 'table';
+        document.getElementById("overall-real-score-table").style.display = 'block';
         document.getElementById('real_quiz').classList.add('active-quiz-type');
         document.getElementById('rapid_quiz').classList.remove('active-quiz-type');
         //navigation links
-
     } else {
         document.getElementById("user-rapid-score-table").style.display = 'none';
-        document.getElementById("user-real-score-table").style.display = 'table';
+        document.getElementById("user-real-score-table").style.display = 'block';
         document.getElementById('real_quiz').classList.add('active-quiz-type');
         document.getElementById('rapid_quiz').classList.remove('active-quiz-type');
         //navigation links
@@ -250,6 +254,7 @@ function getRealQuizScore() {
 }
 
 function populateOverallScoreDetails(quizType, overallScoreDetails) {
+    var userObj = JSON.parse(sessionStorage.getItem('userObj'));
     var table = null;
     if (quizType == 'rapid') {
         table = document.getElementById("overall-rapid-score-table");
@@ -274,12 +279,45 @@ function populateOverallScoreDetails(quizType, overallScoreDetails) {
 
     // insert data
     var i = 1;
-    overallScoreDetails.forEach(function (score) {
-        var row = tbody.insertRow();
-        addCell(row, i++);
-        addCell(row, score.username.toUpperCase());
-        addCell(row, score.score + '/10');
-    });
+    if(overallScoreDetails.length == 0) {
+        if (quizType == 'rapid') {
+            document.getElementById('no-overall-rapid-data').style.display = 'table';
+        } else {
+            document.getElementById('no-overall-real-data').style.display = 'table';
+        }
+    } else {
+        if (quizType === 'rapid') {
+            document.getElementById('no-overall-rapid-data').style.display = 'none';
+        } else {
+            document.getElementById('no-overall-real-data').style.display = 'none';
+        }
+        console.log(JSON.stringify(overallScoreDetails));
+        overallScoreDetails.forEach(function (score) {
+            
+            if(quizType === 'rapid') {
+                isOverallEmptyRapid = false;
+            } else if(quizType === 'real'){
+                isOverallEmptyReal = false;
+            }
+            var row = tbody.insertRow();
+            if(score.username === userObj.username) {
+                row.style.border = '2px solid orange';
+            }
+            addCell(row, i++);
+            addCell(row, score.username.toUpperCase());
+            addCell(row, score.score + '/10');
+        });
+        if(isOverallEmptyRapid === true) {
+            document.getElementById('no-overall-rapid-data').style.display = 'table';
+        } else {
+            document.getElementById('no-overall-rapid-data').style.display = 'none';
+        }
+        if(isOverallEmptyReal === true) {
+            document.getElementById('no-overall-real-data').style.display = 'table';
+        } else {
+            document.getElementById('no-overall-real-data').style.display = 'none';
+        }
+    }
 }
 
 function populateUserScoreDetails(quizType) {
@@ -307,14 +345,44 @@ function populateUserScoreDetails(quizType) {
 
     // insert data
     var i = 1;
-    scoreDetails.forEach(function (score) {
-        if (score.quiztype == quizType) {
-            var row = tbody.insertRow();
-            addCell(row, i++);
-            addCell(row, score.score + '/10');
-            addCell(row, score.scoreDate);
+    if(scoreDetails.length == 0) {
+        if (quizType == 'rapid') {
+            document.getElementById('no-user-rapid-data').style.display = 'table';
+        } else {
+            document.getElementById('no-user-real-data').style.display = 'table';
         }
-    });
+    } else {
+        
+        if (quizType === 'rapid') {
+            document.getElementById('no-user-rapid-data').style.display = 'none';
+        } else {
+            console.log('am here');
+            document.getElementById('no-user-real-data').style.display = 'none';
+        }
+        scoreDetails.forEach(function (score) {
+            if (score.quiztype == quizType) {
+                if(score.quiztype === 'rapid') {
+                    isUserEmptyRapid = false;
+                } else if(score.quiztype === 'real'){
+                    isUserEmptyReal = false;
+                }
+                var row = tbody.insertRow();
+                addCell(row, i++);
+                addCell(row, score.score + '/10');
+                addCell(row, score.scoreDate);
+            }
+        });
+        if(isUserEmptyRapid === true) {
+            document.getElementById('no-user-rapid-data').style.display = 'table';
+        } else {
+            document.getElementById('no-user-rapid-data').style.display = 'none';
+        }
+        if(isUserEmptyReal === true) {
+            document.getElementById('no-user-real-data').style.display = 'table';
+        } else {
+            document.getElementById('no-user-real-data').style.display = 'none';
+        }
+    }
 }
 
 function onFetchUserScoreDetails() {
@@ -322,9 +390,9 @@ function onFetchUserScoreDetails() {
     var profilepage = urlParams.get('profilepage');
     if (profilepage == 'myscore') {
         document.getElementById('overall-score').style.display = 'none';
-        document.getElementById('user-score').style.display = 'table';
+        document.getElementById('user-score').style.display = 'block';
     } else if (profilepage == 'highscore') {
-        document.getElementById('overall-score').style.display = 'table';
+        document.getElementById('overall-score').style.display = 'block';
         document.getElementById('user-score').style.display = 'none';
     } else {
         // if the url is manipulated redirect to category page
@@ -378,7 +446,6 @@ function onFetchUserScoreDetails() {
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.send("");
         }
-
         initializeUserName();
     } else {
         window.location.href = 'index.html';

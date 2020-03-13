@@ -64,19 +64,16 @@ margin-bottom: 7px;
 /* Top Section */
 
 #top_box {
-  margin-left: 360px;
-  top: 18%;
-  position: absolute;
+  margin-left: 25%;
   width: 800px;
   height: 120px;
   background-color: #ffffff;
 }
 
 #top_buttons {
-  top: 20%;
-  margin-right: 40px;
-  right: 0;
-position: absolute;
+  margin-left: 58px;
+  margin-top: 2%;
+  margin-right: 56px;
 width: 710px;
 height: 90px;
 }
@@ -132,7 +129,7 @@ height: 90px;
     }
 
 .heading h2 {
-  margin-top: 142px;
+  margin-top: 14px;
   text-align: center;
   margin-left: 35px;
   color: #253840;
@@ -149,11 +146,12 @@ table 			      {
   border-collapse: collapse; 
   background:white;
   border-radius:6px;
-  overflow:hidden;
   max-width:800px; 
   width:100%;
   margin:0 auto;
   position:relative;
+  overflow-y:scroll;
+   height:100px;
 }
 thead tr        { 
   color: #fff;
@@ -169,8 +167,9 @@ td,th 					{ text-align:center; border:1px solid rgb(238, 253, 223)
 }
 
 table.tableSection {
-  display: table;
   width: 100%;
+  overflow-y: scroll;
+  height: 300px;
 }
 table.tableSection thead, table.tableSection tbody {
   float: left;
@@ -187,5 +186,6 @@ table.tableSection tr {
 table.tableSection th, table.tableSection td {
   width: 33%;
 }
+
   
   

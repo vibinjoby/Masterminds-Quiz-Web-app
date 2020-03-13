@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="css/profile.css" />
+    <link rel="stylesheet" type="text/css" href="css/category_style.css" />
+    <script src="js/miscellaneous.js"></script>
+</head>
+
+<body onload="initializeUserName()">
+    <section class="wrapper">
+        <header id="topBar-first">
+            <img id="app_logo" src="assets/logo_red.png" alt="app_logo" height="25" width="25" onclick="window.location.href='quiztype.html'"/>
+            <img id="app_name" src="assets/app_name.png" alt="app_name" height="25" width="200" onclick="window.location.href='quiztype.html'"/>
+            <label id="user_name">Welcome <span id="username"></span></label>
+            <button id="signout-btn" onclick="onSignOut()">Sign out</button>
+        </header>
+
+        <section id="topBar-second">
+            <section id="top-bar-contents">
+                <a href="tutorials.html" class="active-nav-bar"
+                    style="color: white;text-decoration: none;">TUTORIALS</a>
+                <label class="verticalLine"></label>
+                <a href="quiztype.html" style="color: white;text-decoration: none;">QUIZ OPTIONS</a>
+                <label class="verticalLine"></label>
+                <a id="highScoreLink" href="profile.html?profilepage=highscore"
+                    style="color: white;text-decoration: none;" onclick="onHighScoreSelection()">HIGH SCORE</a>
+                <label class="verticalLine"></label>
+                <a id="myScoreLink" href="profile.html?profilepage=myscore"
+                    style="color: white;text-decoration: none;margin-right: 39px;" onclick="onMyScoreSelection()">MY
+                    SCORE</a>
+            </section>
+        </section>
+        <section style="width: 100%; text-align: center;">
+            <video width="800" height="500" controls>
+                <source src="assets/tutorial.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </section>
+
+    </section>
+</body>
+
+</html>

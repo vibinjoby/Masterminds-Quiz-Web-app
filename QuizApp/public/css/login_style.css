@@ -308,3 +308,7 @@ input[type=text]:placeholder {
   margin-left: 23px;
   font-size: small;
 }
+
+#error-header {
+  font-size: 19px;
+}
