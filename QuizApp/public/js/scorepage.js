@@ -48,6 +48,7 @@ function drawChart() {
 }
 
 async function downloadCertificate() {
+    var scoreDetails = JSON.parse(sessionStorage.getItem('userScore'));
     const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
     // Fetch an existing PDF document
     const url = 'assets/certificate.pdf'
@@ -85,7 +86,7 @@ async function downloadCertificate() {
         rotate: degrees(0),
     })
 
-    firstPage.drawText('8th', {
+    firstPage.drawText('21', {
         x: 284,
         y: 128,
         size: 20,
